@@ -1,0 +1,9 @@
+# Python 3.12 (tested with 3.12.15). Exact versions used to produce every table and figure.
+pandas==3.0.6
+numpy==2.5.4
+geopandas==1.2.0
+pyarrow==26.0.0
+shapely==2.2.0
+pyproj==3.8.0
+scipy==1.18.1
+matplotlib==3.11.2

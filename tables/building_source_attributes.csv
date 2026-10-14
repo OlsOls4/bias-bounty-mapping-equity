@@ -1,0 +1,18 @@
+src,n,year_med,h,fl,cls,name,h_pct,fl_pct,cls_pct,name_pct,region
+Esri Community Maps,356307,2025.0,198548,0,0,0,55.7,0.0,0.0,0.0,eastern-ok
+Microsoft ML Buildings,1769864,2021.0,1315793,0,0,0,74.3,0.0,0.0,0.0,eastern-ok
+OpenStreetMap,425523,2024.0,278345,8673,141814,18968,65.4,2.0,33.3,4.5,eastern-ok
+Esri Community Maps,65212,2025.0,20660,0,1709,440,31.7,0.0,2.6,0.7,eastern-wa
+Microsoft ML Buildings,411683,2021.0,308847,0,0,0,75.0,0.0,0.0,0.0,eastern-wa
+OpenStreetMap,604451,2023.0,445674,7857,127329,13696,73.7,1.3,21.1,2.3,eastern-wa
+Esri Community Maps,137716,2025.0,42424,0,3193,541,30.8,0.0,2.3,0.4,maricopa-az
+Google Open Buildings,37216,2023.0,1574,0,0,0,4.2,0.0,0.0,0.0,maricopa-az
+Microsoft ML Buildings,416019,2020.0,331643,0,0,0,79.7,0.0,0.0,0.0,maricopa-az
+OpenStreetMap,2317273,2023.0,1970521,37502,1082856,30187,85.0,1.6,46.7,1.3,maricopa-az
+Esri Community Maps,30168,2025.0,14220,0,925,217,47.1,0.0,3.1,0.7,northern-ca
+Microsoft ML Buildings,592043,2022.0,509289,0,0,0,86.0,0.0,0.0,0.0,northern-ca
+OpenStreetMap,542513,2023.0,437194,18344,132641,7809,80.6,3.4,24.4,1.4,northern-ca
+Esri Community Maps,278591,2025.0,67095,4,1572,537,24.1,0.0,0.6,0.2,south-central-tx
+Google Open Buildings,254872,2023.0,36419,0,0,0,14.3,0.0,0.0,0.0,south-central-tx
+Microsoft ML Buildings,5083863,2022.0,3923034,0,0,0,77.2,0.0,0.0,0.0,south-central-tx
+OpenStreetMap,5846475,2021.0,4477783,47912,2228369,88268,76.6,0.8,38.1,1.5,south-central-tx
