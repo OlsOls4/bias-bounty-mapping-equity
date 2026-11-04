@@ -1,0 +1,18 @@
+component,proxy,description,tracts_zero,tracts_undefined,median_populated,rural_median,urban_median,spearman_with_v5
+transport_gap,km_major,Overture motorway+trunk+primary+secondary km in tract (the official numerator),137,0,7.892,43.959,6.234,0.53
+transport_gap,km_motorway,of which motorway km,5923,0,0.0,0.0,0.0,0.03
+transport_gap,km_primary,of which primary km,3900,0,0.799,6.086,0.55,0.28
+transport_gap,km_secondary,of which secondary km,696,0,3.945,15.15,3.316,0.31
+transport_gap,major_km_per_km2,major-road km per km2 of land (ALAND),135,2,1.412,0.184,1.901,-0.7
+transport_gap,km_all,all Overture road km (major+tertiary+minor),2,0,37.339,255.355,31.319,0.73
+building_gap,n_bld,Overture building count (the official numerator),2,0,1726.0,2997.0,1535.5,0.53
+building_gap,sh_osm,share of footprints from OpenStreetMap (human-mapped),25,2,0.726,0.107,0.834,-0.48
+building_gap,sh_ms,share from Microsoft ML (same lineage as the removed reference),49,2,0.168,0.878,0.095,0.49
+building_gap,sh_gob,share from Google Open Buildings ML,9503,2,0.0,0.0,0.0,0.01
+building_gap,bld_per_hu,"buildings per ACS housing unit (sanity check only, as in the official rule)",0,82,1.067,2.026,0.981,0.66
+poi_gap,n_fire,places with primary category fire_department,6912,0,0.0,1.0,0.0,0.29
+poi_gap,n_ems,places with primary category ambulance_and_ems_services,9078,0,0.0,0.0,0.0,0.09
+poi_gap,n_school,places in the six README school categories,2100,0,2.0,2.0,2.0,0.11
+poi_gap,n_poi,all Overture places (official numerator of the establishments half),2,0,142.0,115.0,151.0,-0.1
+poi_gap,poi_per_1k,"places per 1,000 residents",0,27,36.446,36.787,36.297,-0.01
+poi_gap,poi_addr,share of places with a street address,4,2,0.973,0.929,0.977,-0.48

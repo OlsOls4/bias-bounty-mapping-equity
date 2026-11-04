@@ -1,0 +1,17 @@
+variant,what_it_tests,mean_prediction,predicted_public_rmse,band95,range_low,range_high
+v5 as submitted,check: should return 0.08312,0.0526,0.08312,0.0831-0.0831,,
+constant 0.035,no rural/tribal signal at all,0.035,0.09241,0.0924-0.0924,,
+constant 0.05,no rural/tribal signal at all,0.05,0.08956,0.0896-0.0896,,
+constant 0.0598,no rural/tribal signal at all,0.0598,0.08902,0.0890-0.0890,,
+intercept x0.5 (0.0175),baseline level,0.0351,0.08642,0.0862-0.0866,,
+intercept x1.5 (0.0525),baseline level,0.0701,0.08343,0.0832-0.0836,,
+rural+tribal increments x0,strength of the whole rural/tribal signal,0.035,0.09241,0.0924-0.0924,,
+rural+tribal increments x0.5,strength of the whole rural/tribal signal,0.0438,0.0861,0.0860-0.0862,,
+rural+tribal increments x1.5,strength of the whole rural/tribal signal,0.0613,0.08384,0.0835-0.0842,,
+rural+tribal increments x2.0,strength of the whole rural/tribal signal,0.0701,0.08817,0.0872-0.0891,,
+"best a + b*v5 (a=0.0037, b=1.068)",optimum the probes allow without new submissions,0.0598,0.08278,0.0827-0.0829,,
+rural coef x0.5 (0.035),one coefficient alone (only a range is identified),0.0456,,,0.07518,0.08779
+rural coef x1.5 (0.105),one coefficient alone (only a range is identified),0.0596,,,0.08088,0.09271
+tribal coef x0.5 (0.02),one coefficient alone (only a range is identified),0.0508,,,0.08096,0.09278
+tribal coef x1.5 (0.06),one coefficient alone (only a range is identified),0.0543,,,0.07267,0.08565
+tribal coef = 0,one coefficient alone (only a range is identified),0.049,,,0.07918,0.10188

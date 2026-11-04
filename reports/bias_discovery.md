@@ -1,35 +1,41 @@
 ---
 title: "Who Maps Whom: Upstream-Source Gaps in Overture Maps on Reservations, the South Texas Border and Rural America"
-subtitle: "Bias Bounty Mapping Equity Challenge · Best Bias Discovery entry · Zindi user Olsols4"
-date: "October 2026"
+subtitle: "Bias Bounty Mapping Equity Challenge · Best Bias Discovery entry · Zindi user OlsOls4 · leaderboard submission S9ekqtTA (v5\_rural, public RMSE 0.0831) · code: github.com/OlsOls4/bias-bounty-mapping-equity (tag v1.0)"
+date: "November 2026"
 geometry: margin=2cm
 fontsize: 10pt
 ---
 
-# Executive summary
+# Executive summary (Bias Discovery section)
 
-Overture Maps is assembled from several upstream pipelines, and which pipeline maps a neighbourhood follows who lives there. We traced the source of 19.2 million buildings and 2.0 million places across all 9,794 scored tracts in five regions and found gaps the scorecard cannot see:
+> **Reproduce everything:** `git clone https://github.com/OlsOls4/bias-bounty-mapping-equity && cd bias-bounty-mapping-equity && pip install -r reports/requirements.txt && bash reports/get_data.sh && bash reports/run_all.sh` (about 6 minutes on one CPU; public data, no credentials; every cited number is written to `reports/tables/report_numbers.csv`).
+>
+> **Consent.** We did not consult any tribal nation or colonia organisation. We offer these findings for them to use on their own terms, and we will remove any named example on request.
 
-* **Overture omits street addresses for places on reservations.** 82% of places have one, against 96% elsewhere; 44% in one Tohono O'odham Nation tract. The gap survives every control and county clustering (−7.7 points), and nearly all of it sits in Meta-sourced listings.
-* **A South Texas border seam.** In nine border counties (1.7 million residents), Google's machine-learned layer supplies 29% of footprints and human mappers 8%, against 55% elsewhere in the region. Arizona's border counties show no such seam.
-* **Rural buildings are machine-detected.** Only 4.5% say what they are (home, school, barn), against 27% elsewhere.
-* **813 urban neighbourhoods (3.4 million residents) have under 5% human-mapped buildings**, 154 of them in Hidalgo County, Texas.
+Overture Maps is assembled from several upstream pipelines, and which pipeline maps a neighbourhood follows who lives there. We traced the source of 19.2 million buildings and 2.0 million places across all 9,794 scored tracts (the four listed regions plus eastern Washington, which Zindi also scores) and found five gaps the scorecard cannot see:
 
-Here a 911 dispatcher may fail to geocode a call, a damage assessor cannot tell a home from a shed, and relief lists miss homes. We recommend per-area source reporting, tribally led address channels and lower-confidence flags (section 8).
+* **F1. Overture's place listings on reservations lack street addresses far more often.** 82% of places have one, against 96% elsewhere: −7.7 points after controls (95% CI −11.8 to −3.7), and −11.5 points (−17.8 to −5.2) on the 50 tracts that lie mostly on reservation land. The gap holds for schools, chapter houses, churches and clinics, and nearly all of it sits in Meta-sourced listings.
+* **F2. A South Texas border seam.** In nine border counties (1.75 million residents), Google's machine-learned layer supplies 29% of footprints and human mappers 8%, against 55% elsewhere in the region: −50 points of human-mapped share (−59 to −40). Arizona's border counties show no such seam.
+* **F3. Rural buildings are machine-detected.** Only 4.5% say what they are (home, school, barn), against 27% elsewhere.
+* **F4. 813 urban neighbourhoods (3.4 million residents) have under 5% human-mapped buildings**, 154 of them in Hidalgo County, Texas.
+* **F5. The building benchmark is partly circular.** In 3,618 tracts (37%), at least half of Overture's footprints come from Microsoft's own ML layer, so a count against Microsoft footprints mostly measures which pipeline drew the map.
+
+**These gaps sit where climate hazards are highest.** 42 of the 50 core reservation tracts are in the top quartile for wildfire, drought or heat, and 450 of the 451 seam tracts are in the top quartile for absolute heat (1.74 million residents). The people who rely on Overture-based consumer maps, commercial routing and visiting mutual-aid or relief crews in these places get records that cannot be geocoded or that cannot tell a home from a shed. We recommend per-area source reporting, tribally led address channels, lower-confidence flags and housing-unit counts for relief allocation (section 8; flagged tracts in `reports/tables/flagged_tracts.csv`).
 
 *Measured vs inferred:* every figure above is measured from the challenge data. Statements about consequences, and about how these patterns move the hidden coverage-gap score, are inferences and are labelled as such.
 
-**Robustness at a glance.** "Survives" means the effect holds after clustering standard errors by county, a wild-cluster bootstrap and a Holm correction across all 28 regression terms. Details are in section 1.
+**Robustness at a glance.** "Survives" means the effect holds after clustering standard errors by county, a wild-cluster bootstrap and a Holm correction across all 28 regression terms. Details are in section 1. Intervals are coefficient ± 1.96 county-clustered SE; † with only 9 seam counties these intervals are optimistic.
 
-| Finding | Effect after controls | Bootstrap p | Holm-adjusted p | Status |
+| Finding | Effect after controls (95% CI) | Bootstrap p | Holm-adjusted p | Status |
 |------------------|-------------|------|------|-------------|
-| F1 Reservation places lack addresses | −7.7 pts | 0.001 | 0.027 | **survives** |
-| F2 South Texas seam: less human mapping | −50 pts OSM share | 0.002 | 0.036 | **survives** |
-| F2 South Texas seam: fewer places per resident | −31% | 0.005 | 0.083 | suggestive |
-| F3 Rural: less human mapping | −7.9 pts OSM share | 0.001 | 0.024 | **survives** |
-| F3 Social vulnerability: less human mapping | −12 pts per unit of SVI | 0.012 | 0.17 | suggestive |
+| F1 Reservation places lack addresses | −7.7 pts (−11.8 to −3.7) | 0.001 | 0.027 | **survives** |
+| F2 South Texas seam: less human mapping | −50 pts OSM share (−59 to −40)† | 0.002 | 0.036 | **survives** |
+| F2 South Texas seam: fewer places per resident | −31% (−35 to −26)† | 0.005 | 0.083 | suggestive |
+| F3 Rural: less human mapping | −7.9 pts OSM share (−12.5 to −3.3) | 0.001 | 0.024 | **survives** |
+| F3 Social vulnerability: less human mapping | −12 pts per unit of SVI (−20 to −4) | 0.012 | 0.17 | suggestive |
 | F4 ML-only neighbourhoods are more vulnerable | SVI 0.65 vs 0.56 | 0.07 | n/a | weak (driven by a few counties) |
-| F5 ML-filled tracts have more footprints per home | −20% per 100 pts of OSM share | 0.001 | n/a | holds; −15% within counties (p = 0.06) |
+| F1 core tracts (≥50% reservation land) | −11.5 pts (−17.8 to −5.2) | 0.0004 | n/a | **survives** |
+| F5 ML-filled tracts have more footprints per home | −20% per 100 pts of OSM share (−27 to −11) | 0.001 | n/a | holds; −15% within counties (p = 0.06) |
 
 # 1. Data, definitions and statistics
 
@@ -51,13 +57,27 @@ Here a 911 dispatcher may fail to geocode a call, a damage assessor cannot tell 
 
 > **Glossary.** *Lineage* (or source): which upstream dataset supplied a feature. *ML footprint*: a building outline detected by a machine-learning model from imagery. *OSM*: OpenStreetMap, mapped by people. *Conflation*: Overture's merging of sources; OSM wins where both exist. *SVI*: CDC Social Vulnerability Index percentile (0–1). *Tract-weighted*: each tract counts once. *Place-weighted*: each place counts once. *Clustered SE*: an uncertainty estimate that allows tracts in the same county to be correlated.
 
-# 2. Finding 1: Overture omits street addresses for places on reservations
+# 2. Finding 1: Overture's place listings on reservations lack street addresses far more often
 
-Across the 80 populated tracts on legal reservation or trust land (34 areas in 28 counties; 294,612 residents), **82.1% of Overture places carry a street address, against 95.6% elsewhere** (tract-weighted). Counting each place once, the figures are 88.2% vs 96.9%. In the Arizona region the tract-weighted figure is **74.3% (37 tracts) against 95.4%**; for rural Arizona tracts alone it is 66.2% against 82.9%.
+Across the 80 populated tracts that overlap legal reservation or trust land (strata column `tribal_legal`; 34 areas in 28 counties; 294,612 residents), **82.1% of Overture places carry a street address, against 95.6% elsewhere** (tract-weighted). Counting each place once, the figures are 88.2% vs 96.9%. In the Arizona region the tract-weighted figure is **74.3% (37 tracts) against 95.4%**; for rural Arizona tracts alone it is 66.2% against 82.9%.
 
-**It is not rurality.** After controlling for rurality, density, social vulnerability, region and the border, reservation tracts still have **7.7 points fewer addressed places** (county-clustered t = −3.8; bootstrap p = 0.001; Holm p = 0.027). Rural status itself has no effect (−0.1 points, t = −0.3). The gap holds when clustering by reservation instead of county (t = −3.1, p = 0.003). It also holds after adding Meta's share of places and the number of places (−7.0 points, p = 0.001). Weighting by places, it shrinks to −3.5 points (t = −2.0, p = 0.045). The reason is that the large, well-addressed tracts dominate, so the gap is concentrated in tracts with few listed places.
+**It is not rurality.** After controlling for rurality, density, social vulnerability, region and the border, reservation tracts still have **7.7 points fewer addressed places** (county-clustered t = −3.8; bootstrap p = 0.001; Holm p = 0.027). Rural status itself has no effect (−0.1 points, t = −0.3), and higher social vulnerability goes with *more* addressed places (+1.4 points per unit of SVI, 95% CI +1.0 to +1.9), so the reservation gap is not a poverty or rurality effect. Rural is `ur_class`; SVI is `svi_overall`. The gap holds when clustering by reservation instead of county (t = −3.1, p = 0.003). It also holds after adding Meta's share of places and the number of places (−7.0 points, p = 0.001). Weighting by places, it shrinks to −3.5 points (t = −2.0, p = 0.045). The reason is that the large, well-addressed tracts dominate, so the gap is concentrated in tracts with few listed places.
 
 **Where the missing addresses come from.** Across the study area, **95% of address-less places are Meta listings**, although Meta supplies 61% of places. On reservations, Meta supplies more of the places (71% vs 60%), and its listings are far more often address-less: 83.6% have an address against 95.1% elsewhere. Places from every other provider are 99% addressed in both groups (`reservation_place_sources.csv`). Among Meta listings alone, the reservation gap is −4.5 points after controls (p = 0.026). This is a concrete, fixable provider-level issue.
+
+**Stronger where the tract is mostly reservation land.** 30 of the 80 tracts overlap a reservation by less than half. On the 50 tracts with at least 50% overlap (13 reservation areas, 175,088 residents) the address share is 78% against 96%, and the controlled gap is **−11.5 points (95% CI −17.8 to −5.2; bootstrap p = 0.0004)**.
+
+**Which places lack an address.** Some places never have a street address: 45% of the 816 address-less places in core tracts are natural features, parks or landmarks. Excluding them, the gap is still −9.3 points (−14.9 to −3.7). The rest are places people go in an emergency:
+
+| Place type (core reservation tracts vs elsewhere) | Places (core) | With address, core | With address, elsewhere |
+|---|---|---|---|
+| Government and community (incl. chapter houses) | 422 | 84% | 94% |
+| Churches and worship | 324 | 83% | 96% |
+| Schools | 251 | 87% | 94% |
+| Health (hospitals, clinics, pharmacies) | 165 | 92% | 99% |
+| Food, fuel and supplies | 349 | 95% | 98% |
+
+That is 189 address-less relief-relevant places, for example 15 in San Carlos tract `04007940400`, 10 in `04009940500` and 14 in Gila River tract `04021941200` (`reservation_relief_places_missing.csv`).
 
 | Tract | Nation (official name) | Residents | Places | With address (95% CI) | Meta share |
 |------|----------------|----|---|------|---|
@@ -66,22 +86,23 @@ Across the 80 populated tracts on legal reservation or trust land (34 areas in 2
 | 04005945100 | Navajo Nation | 3,342 | 70 | 47% (36–59%) | 86% |
 | 04009940500 | San Carlos Apache Tribe | 4,720 | 72 | 49% (37–60%) | 93% |
 | 04017940015 | Navajo Nation | 4,071 | 47 | 49% (35–63%) | 83% |
-| 04001970202 | Pueblo of Zuni | 2,610 | 82 | 52% (42–63%) | 79% |
 | 04017940100 | White Mountain Apache Tribe (Fort Apache) | 4,282 | 62 | 55% (43–67%) | 90% |
 
-*Lowest-address reservation tracts with 500+ residents (`examples_reservation_low_address.csv`); Wilson 95% intervals.*
+*Lowest-address reservation tracts with 500+ residents (`examples_reservation_low_address.csv`); Wilson 95% intervals. An earlier draft listed Apache County tract `04001970202` as Pueblo of Zuni; it overlaps Zuni trust land by only 1.5%, so we removed it.*
 
 The pattern repeats in eastern Washington. In tracts of the Confederated Tribes and Bands of the Yakama Nation (`53077940003`) 63% of places are addressed (54–71%); for the Confederated Tribes of the Colville Reservation (`53019940000`) the figure is 66% (53–76%). Weather-station deserts (−9.4 points) and recently burned tracts (−14.0 points) show similar address gaps (Figure 2).
 
 ![Share of places with a street address, by stratum. Left: in-stratum (blue or orange) vs rest of study area (grey); axis starts at 60%. Right: the gap in percentage points with 95% county-cluster bootstrap intervals, on a zero-based axis.](fig/fig3_address_by_stratum.png){width=92%}
 
-**Why it matters here (decision chain, inferred).** Computer-aided dispatch, routing apps and relief distribution lists all match a place to a location through its address. A clinic, chapter house or store with no address in Overture cannot be geocoded from that record. The Navajo Nation reports about 185,000 structures needing street addresses and says a Nation-wide E-911 system "will rely on the completion of rural addressing" (Navajo Nation Council, 16 Feb 2021). Overture data reaches emergency and planning users directly: Esri adopted Overture buildings as default layers in ArcGIS, and Meta uses Overture in Facebook and Instagram maps (Overture Maps Foundation, Feb 2026). A missing address in Overture is not always a mapping failure, though. Navajo household addressing data is shared with dispatch services but "not made public" (ICT, 2015). Remedies should therefore follow the CARE Principles for Indigenous Data Governance: improve emergency access through channels the tribes control, not by scraping or imputing addresses.
+**Why it matters here (decision chain, inferred).** Local 911 centres geocode calls against their own address data, not Overture, so the risk is not at the dispatch console. It is in everything around it: consumer map apps residents use to give directions, commercial routing, and mutual-aid crews, utilities and relief teams arriving from outside who rely on those apps. Overture reaches them directly: Esri adopted Overture buildings as default layers in ArcGIS, and Meta uses Overture in Facebook and Instagram maps (Overture Maps Foundation, Feb 2026). A school or chapter house with no address in Overture cannot be found by address search from that record, and it is exactly the kind of place used as a shelter or distribution point. The Navajo Nation reports about 185,000 structures needing street addresses and says a Nation-wide E-911 system "will rely on the completion of rural addressing" (Navajo Nation Council, 16 Feb 2021). A missing address is not always a mapping failure: rural addressing on reservations is tribe-led and unfinished, and Navajo household addressing data is shared with dispatch services but "not made public" (ICT, 2015). Remedies should therefore follow the CARE Principles for Indigenous Data Governance: improve access through channels the tribes control, not by scraping or imputing addresses.
+
+**Climate exposure.** 42 of the 50 core tracts (146,287 residents, 763 address-less places) are in the top quartile of the study area for at least one strata hazard (USFS wildfire hazard potential, winter drought severity, or heat days). Wildfire: Fort Apache `04017940100` (55% of places addressed) and San Carlos `04009940500` (49%). Drought: Navajo Nation `04017940014` (45%) and `04005945100` (47%) (`hazard_named_tracts.csv`).
 
 # 3. Finding 2: the South Texas border seam
 
 Google Open Buildings appears in Overture in only 289 of the 9,794 scored tracts (292,088 footprints). Of the 287 populated Google tracts, **285 lie in counties on the international border**; the other two are in Dimmit County, Texas, which adjoins two seam counties. In the nine seam counties Google supplies **29% of footprints and OSM only 8%**, against 55% OSM in the rest of the Texas region (pooled over footprints). Overture's documentation shows the same Google/Microsoft mixing at the San Diego–Tijuana border. Our inference is that Google's coverage, built for Latin America, reaches a few tens of kilometres into the US.
 
-After controls, seam tracts have **50 points less OSM share** (t = −10.2; bootstrap p = 0.002; Holm p = 0.036). They also have **31% fewer places per resident** (p = 0.005; Holm p = 0.083) and 16 points fewer place websites (p = 0.010; Holm p = 0.15). Street addresses are not lower (−1.6 points, p = 0.06). The seam is among the most socially vulnerable parts of the study area: mean SVI 0.84, against 0.56 in the rest of the region.
+After controls, seam tracts have **50 points less OSM share** (95% CI −59 to −40; t = −10.2; bootstrap p = 0.002; Holm p = 0.036). They also have **31% fewer places per resident** (−35% to −26%; p = 0.005; Holm p = 0.083) and 16 points fewer place websites (p = 0.010; Holm p = 0.15). Street addresses are not lower (−1.6 points, p = 0.06). The seam is among the most socially vulnerable parts of the study area: mean SVI 0.84, against 0.56 in the rest of the region.
 
 **Arizona is the contrast.** The four Arizona border counties, taken together, have 76% OSM share against 81% in the rest of the Arizona region, and their controlled effect is zero (−0.1 points, p = 0.98). Google fill does appear in individual Cochise County tracts (for example `04003000902`, 82% Google). But Tucson's well-mapped tracts dominate the county totals, so no county-wide deficit appears. The seam is therefore a South Texas phenomenon. That points to an upstream coverage boundary, not to "the border" as such.
 
@@ -89,7 +110,7 @@ After controls, seam tracts have **50 points less OSM share** (t = −10.2; boot
 
 ![South Texas seam vs the rest of the Texas region, with Arizona's border counties as a contrast. (a) source of building footprints; (b) places per 1,000 residents (pooled), n = tracts.](fig/fig4_border_seam.png){width=92%}
 
-**Why it matters here (inferred).** These counties hold most of Texas's colonias. The Texas Secretary of State's 2014 count, republished by TDHCA, lists 937 colonias in Hidalgo (about 150,000 residents), 256 in Starr, 196 in Cameron, 74 in Maverick and 62 in Webb. Footprints there are drawn by a different pipeline from the one used a few kilometres north. Any analysis that merges or compares footprint sources could read the pipeline boundary as real change: before/after damage comparison, insurance exposure, or change detection. Fewer listed places per resident also means thinner points of interest for routing and relief logistics.
+**Why it matters here (inferred).** These counties hold most of Texas's colonias. The Texas Secretary of State's 2014 count, republished by TDHCA, lists 937 colonias in Hidalgo (about 150,000 residents), 256 in Starr, 196 in Cameron, 74 in Maverick and 62 in Webb. Footprints there are drawn by a different pipeline from the one used a few kilometres north. Any analysis that merges or compares footprint sources could read the pipeline boundary as real change: before/after damage comparison, insurance exposure, or change detection. Fewer listed places per resident also means thinner points of interest for routing and relief logistics. All but one of the 451 seam tracts are in the top quartile for absolute heat; Hidalgo `48215021906`, for example, averages 133 days a year at heat-stress level (WBGT ≥ 28 °C), and 92% of seam footprints are machine-drawn.
 
 # 4. Finding 3: rural buildings are machine-detected and say nothing about use
 
@@ -122,11 +143,11 @@ Human mapping is split in two even in dense places (Figure 5). **813 urban tract
 
 On average these tracts are **more socially vulnerable** than other urban tracts (mean SVI 0.65 vs 0.56; SVI minority percentile 0.73 vs 0.65). However, the difference is **not robust to county clustering (p = 0.07)**: it is driven by Hidalgo, Cameron, Webb and Starr, while the suburban Houston counties (Montgomery, Brazoria, Fort Bend) are ML-only *and* low-SVI. The robust facts are what these tracts lack: semantic building attributes (0.8%) and place websites (73% vs 82%). Examples (100% Microsoft footprints): Hidalgo `48215021906` (5,598 residents; SVI 0.73; 33% of places with a website), `48215022503` (SVI 0.93), and Harris `48201433505` (SVI 0.95; 189 footprints for 785 homes). For contrast, Dallas `48113013605` (SVI 0.09) is 99.9% OSM, and 99.8% of its footprints have attributes.
 
-# 6. Why the building benchmark itself may be circular (inferred)
+# 6. Finding 5: the building benchmark itself may be circular (inferred)
 
-The challenge scores building coverage by comparing Overture's building count with Microsoft's footprints. But Overture *is* Microsoft footprints wherever no human mapper has drawn the area. In **3,618 tracts (37% of tracts with buildings; 14.2 million residents), at least half of Overture's footprints are Microsoft ML.** There, Overture and the benchmark share a source, so they should agree almost by construction. The exceptions would be footprints under 10 m², which Overture drops by design, and any release differences.
+The challenge scores building coverage by comparing Overture's building count with Microsoft's footprints. But Overture *is* Microsoft footprints wherever no human mapper has drawn the area. In **3,618 tracts (37% of tracts with buildings; 14.2 million residents), at least half of Overture's footprints are Microsoft-sourced ML footprints inside Overture** (identified from Overture's own `sources` field; we never read the removed Microsoft layer). There, Overture and the benchmark share a source, so they should agree almost by construction. The exceptions would be footprints under 10 m², which Overture drops by design, and any release differences.
 
-Where people have redrawn the map, Overture holds *fewer* footprints per home. In urban tracts the median is **1.15 buildings per housing unit at <5% OSM (813 tracts) against 0.91 at >95% OSM (2,087 tracts)**. The ML-filled tracts have more footprints per home in all five density quintiles (Figure 6). With region fixed effects, moving from 0% to 100% OSM goes with **20% fewer footprints per home** (t = −4.3, p = 0.001). Comparing tracts within the same county, the figure is 15% (t = −2.7, p = 0.06). One likely reason is that mappers merge or skip sheds and attached structures that ML detects separately.
+Where people have redrawn the map, Overture holds *fewer* footprints per home. In urban tracts the median is **1.15 buildings per housing unit at <5% OSM (813 tracts) against 0.91 at >95% OSM (2,087 tracts)**. The ML-filled tracts have more footprints per home in all five density quintiles (Figure 6). With region fixed effects, moving from 0% to 100% OSM goes with **20% fewer footprints per home** (95% CI −27% to −11%; t = −4.3, p = 0.001). Comparing tracts within the same county, the figure is 15% (t = −2.7, p = 0.06). One likely reason is that mappers merge or skip sheds and attached structures that ML detects separately.
 
 ![Median buildings per housing unit in urban tracts, by density quintile and OSM share.](fig/fig5_bld_per_hu.png){width=72%}
 
@@ -136,8 +157,6 @@ Where people have redrawn the map, Overture holds *fewer* footprints per home. I
 
 * **Fire vintage, northern California only.** In the 150 tracts with ≥30% of land burned since 2018, 85% have a mean footprint source date older than their last fire. But 78% would be expected anyway, because 58% of those fires were in 2025. Against a null of unburned tracts in the same region, only northern California shows excess staleness: 70% vs 56% (64 tracts; p < 0.001 assuming independence, which overstates certainty). Eastern Washington (98% vs 98%) and Arizona (91% vs 89%) do not. Paradise (Camp Fire, 2018) was re-mapped: 91–99.8% of its footprints carry 2020+ source dates. *Caveat:* `update_time` dates the source record, not the imagery.
 * **Nulls that sharpen the claims.** Minority-majority tracts (N3) and housing/transport-burden tracts (N5) show *no* address deficit. N3 tracts do have fewer places per resident (37 vs 51 per 1,000), so the reservation address gap is not a general minority effect. Tribal statistical areas, including Muscogee (Creek) Nation tracts that the Census labels "Creek OTSA", show no robust effect on any outcome (all Holm p ≥ 0.75). This is despite striking individual tracts such as `40143009014` (6 places for 1,924 residents). In 2020 the US Supreme Court held that the Creek reservation remains an Indian reservation for purposes of federal criminal law. The statistical-area flag in the strata tables therefore understates reservation status in eastern Oklahoma.
-* **Comparison with a leaderboard scorecard (directional only).** We compared our stratum ratios with the eight disparity ratios displayed on the public leaderboard for a top-ranked entry. We cannot verify how that entry was produced. **We tried seven indicators** and report all of them (`scorecard_agreement_tests.csv`). The two best rank-correlations are missing addresses (ρ = 0.88; exact one-sided p = 0.004; Bonferroni ×7 p = 0.025) and non-OSM share (ρ = 0.74; p = 0.023; Bonferroni p = 0.16). Non-OSM share gets drought and heat in the wrong direction. With eight overlapping strata, this is suggestive only.
-
 # 8. Who is affected and what to do
 
 **Who is affected (overlapping groups, five regions):** 294,612 residents of reservation and trust-land tracts (2.9 million in tracts overlapping any tribal land), 1.75 million in the South Texas border seam, 6.5 million in rural tracts and 3.4 million in ML-only urban neighbourhoods. The groups overlap, so they must not be added together.
@@ -145,20 +164,21 @@ Where people have redrawn the map, Overture holds *fewer* footprints per home. I
 | # | Owner | Action | Finding | How to tell it worked |
 |--|--------|-------------------|---|--------|
 | R1 | Overture Maps Foundation | Publish a per-area source summary with each release: share of features by source, and share with class/name/address, per tract or H3 cell | F1–F5 | Users can flag ML-only areas without reprocessing 19 M footprints |
-| R2 | Overture + Meta (places) | Audit why Meta listings on reservations lack addresses (83.6% vs 95.1%); report address completeness by tribal area | F1 | Reservation gap narrows, **with tribal consent** |
+| R2 | Overture + Meta (places) | With each nation's consent, audit why Meta listings on reservations lack addresses (83.6% vs 95.1%) and report address completeness by tribal area | F1 | Reservation gap narrows |
 | R3 | Overture | Tag or reconcile the Google/Microsoft seam in the nine South Texas counties | F2 | No step change in source mix at the seam |
 | R4 | Organisers (Humane Intelligence / Zindi) | Add source and place-provider strata to the scorecard; score the building gap separately where Overture and the benchmark share a source | F5 | Scorecard separates "unmapped" from "mapped by another pipeline" |
-| R5 | Emergency managers, 911/NG911 GIS, relief agencies, insurers | Treat tracts with <5% OSM, or reservation tracts with <70% addressed places, as lower-confidence. Do not rely on Overture class or address alone for exposure counts, damage assessment or geocoding; fall back to local or tribal authoritative layers | F1–F4 | Fallback written into standard procedures |
+| R5 | Emergency managers, 911/NG911 GIS, relief agencies, insurers | Treat tracts with <5% OSM, or reservation tracts with <70% addressed places, as lower-confidence. Do not rely on Overture class or address alone for exposure counts, damage assessment or geocoding; fall back to local or tribal authoritative layers. The 1,618 tracts meeting these rules are listed in `flagged_tracts.csv` | F1–F4 | Fallback written into standard procedures |
 | R6 | OSM US, HOT and Rapid mappers | Prioritise validation in Hidalgo, Cameron, Webb, Starr and Maverick counties with local colonia organisations; map tribal land only at the invitation of, and on terms set by, each nation's GIS or addressing office | F2, F4 | OSM share and attribute coverage rise in listed tracts |
 | R7 | Overture | Document the 10 m² ML floor as a known undercount and refresh footprints after large fires, not only famous ones | §6–7 | Floor and refresh noted in release notes |
+| R8 | State and federal relief agencies (FEMA, state emergency management) | In tracts with ≥50% ML footprints, allocate by Census housing units, not raw footprint counts (ML-filled tracts carry ~20% more footprints per home and no building type); add the 189 address-less relief places to pre-event checks with tribal offices | F1, F3, F5 | Relief counts match housing units in flagged tracts |
 
-**Respect and consent.** No tribal nation or colonia organisation was consulted for this analysis. The findings are offered for them to use on their own terms, following the CARE Principles (Collective benefit, Authority to control, Responsibility, Ethics).
+**Respect and consent.** As stated at the top, no tribal nation or colonia organisation was consulted. The findings are offered for them to use on their own terms, following the CARE Principles (Collective benefit, Authority to control, Responsibility, Ethics).
 
 # 9. Reproducibility
 
-Everything runs from the challenge's public bucket with no credentials: `bash reports/get_data.sh` (fetches the 35 input files and checks them against `reports/DATA_SHA256SUMS.txt`), then `pip install -r reports/requirements.txt` (pinned versions) and `bash reports/run_all.sh`. The full run takes about 6 minutes on one CPU, and every step is deterministic (bootstrap seed 20261014). Outputs are `reports/tables/*.csv`, `reports/tables/results.json`, `reports/tables/report_numbers.csv` (every number cited here) and `reports/fig/*.png`. The pipeline order and each script's purpose are listed in the Documentation report, section 7.
+Code: <https://github.com/OlsOls4/bias-bounty-mapping-equity> (tag v1.0). Everything runs from the challenge's public bucket with no credentials: `bash reports/get_data.sh` (fetches the 35 input files and checks them against `reports/DATA_SHA256SUMS.txt`), then `pip install -r reports/requirements.txt` (pinned versions) and `bash reports/run_all.sh`. The full run takes about 6 minutes on one CPU, and every step is deterministic (bootstrap seed 20261014). Outputs are `reports/tables/*.csv`, `reports/tables/results.json`, `reports/tables/report_numbers.csv` (every number cited here) and `reports/fig/*.png`. The pipeline order and each script's purpose are listed in the Documentation report, section 7.
 
-**External sources (all retrieved 14 Oct 2026; none used in any scored computation):** Overture Buildings Guide, <https://docs.overturemaps.org/guides/buildings/>. Overture Maps Foundation, "Three Years In" (3 Feb 2026), <https://overturemaps.org/blog/2026/three-years-in-how-overture-maps-is-changing-the-way-the-world-builds-maps/>. Navajo Nation Council press release (16 Feb 2021), <https://navajonationcouncil.org/wp-content/uploads/2021/03/BFC_E911_rural_addressing_update-PR.pdf>. ICT, "For Pizzas and Beyond: Navajo Nation Homes Getting Addresses" (8 Jun 2015), <https://ictnews.org/archive/for-pizzas-and-beyond-navajo-nation-homes-getting-addresses/>. TDHCA, "Background on the Colonias", <https://www.tdhca.texas.gov/background-colonias>. Global Indigenous Data Alliance, CARE Principles, <https://www.gida-global.org/careprinciples>. *McGirt v. Oklahoma*, 591 U.S. (2020), <https://www.supremecourt.gov/opinions/19pdf/18-9526_9okb.pdf>. Challenge page, <https://zindi.world/competitions/bias-bounty-mapping-equity-challenge>.
+**External sources (all retrieved 14 Oct 2026 and rechecked 4 Nov 2026; none used in any scored computation):** Overture Buildings Guide, <https://docs.overturemaps.org/guides/buildings/>. Overture Maps Foundation, "Three Years In" (3 Feb 2026), <https://overturemaps.org/blog/2026/three-years-in-how-overture-maps-is-changing-the-way-the-world-builds-maps/>. Navajo Nation Council press release (16 Feb 2021), <https://navajonationcouncil.org/wp-content/uploads/2021/03/BFC_E911_rural_addressing_update-PR.pdf>. ICT, "For Pizzas and Beyond: Navajo Nation Homes Getting Addresses" (8 Jun 2015), <https://ictnews.org/archive/for-pizzas-and-beyond-navajo-nation-homes-getting-addresses/>. TDHCA, "Background on the Colonias", <https://www.tdhca.texas.gov/background-colonias>. Global Indigenous Data Alliance, CARE Principles, <https://www.gida-global.org/careprinciples>. *McGirt v. Oklahoma*, 591 U.S. (2020), <https://www.supremecourt.gov/opinions/19pdf/18-9526_9okb.pdf>. Challenge page, <https://zindi.world/competitions/bias-bounty-mapping-equity-challenge>.
 
 # 10. Limitations
 

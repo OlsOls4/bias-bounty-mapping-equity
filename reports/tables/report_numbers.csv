@@ -1,0 +1,650 @@
+key,value,description
+scored_tracts,9794.0,scored tracts (all 5 sample submissions)
+populated_tracts,9767.0,scored tracts with population > 0
+tracts_eastern-ok,1192.0,scored tracts in eastern-ok
+tracts_eastern-wa,415.0,scored tracts in eastern-wa
+tracts_maricopa-az,1593.0,scored tracts in maricopa-az
+tracts_northern-ca,591.0,scored tracts in northern-ca
+tracts_south-central-tx,6003.0,scored tracts in south-central-tx
+buildings_total,19169786.0,Overture building footprints assigned to scored tracts
+places_total,2001075.0,Overture places assigned to scored tracts
+edge_zero_pop,27.0,edge case count: zero_pop
+edge_zero_hu,82.0,edge case count: zero_hu
+edge_no_buildings,2.0,edge case count: no_buildings
+edge_no_places,2.0,edge case count: no_places
+edge_no_major_road,137.0,edge case count: no_major_road
+edge_special_98xx,63.0,edge case count: special_98xx
+edge_svi_missing_all,88.0,edge case count: svi_missing_all
+edge_svi_missing_populated,61.0,edge case count: svi_missing_populated
+edge_cvi_missing,2.0,edge case count: cvi_missing
+edge_populated_no_places_no_buildings,0.0,edge case count: populated_no_places_no_buildings
+edge_populated_no_places,0.0,edge case count: populated_no_places
+edge_populated_no_buildings,0.0,edge case count: populated_no_buildings
+edge_pct_urban_missing,27.0,edge case count: pct_urban_missing
+ml_attr_max_pct,0.0,"max % of ML (Microsoft/Google) footprints with class, name or floors, any region"
+osm_class_pct_min,21.1,min % of OSM footprints with a class (by region)
+osm_class_pct_max,46.7,max % of OSM footprints with a class (by region)
+rural_osm_share_tractmean,0.2541949923361739,rural tracts: mean of tract OSM share
+nonrural_osm_share_tractmean,0.6436830702128274,non-rural tracts: mean of tract OSM share
+rural_osm_share_pooled,0.2648976059113651,rural: OSM footprints / all footprints (pooled)
+nonrural_osm_share_pooled,0.6158232398975593,non-rural: pooled OSM share
+rural_sem_pooled,0.0454168381842491,rural: share of footprints with class/name/floors (pooled)
+nonrural_sem_pooled,0.2682100441384827,non-rural: same (pooled)
+sem_pooled_ratio,5.905519953863713,non-rural / rural semantic share (pooled)
+rural_sem_tractmean,0.0459447534773993,rural: tract-mean semantic share
+nonrural_sem_tractmean,0.2978427933869676,non-rural: tract-mean semantic share
+strata_tests,90.0,stratum x indicator tests in the strata table (BH family)
+strata_tests_q05,57.0,"of those, BH q < 0.05"
+reg_family_terms,28.0,regression terms in the Holm/BH family (4 outcomes x 7 terms)
+reg_n,9706.0,"tracts in the regressions (populated, complete covariates)"
+reg_clusters,325.0,county clusters
+reg_osm_rural_coef,-0.079019555444864,OSM share of footprints: rural coef
+reg_osm_rural_t_cr1,-3.3448367546202014,OSM share of footprints: rural t_cr1
+reg_osm_rural_p_wcr,0.0012,OSM share of footprints: rural p_wcr
+reg_osm_rural_p_holm,0.0239999999999999,OSM share of footprints: rural p_holm
+reg_osm_reservation_coef,0.0923484115227917,OSM share of footprints: reservation coef
+reg_osm_reservation_t_cr1,2.4022504666149285,OSM share of footprints: reservation t_cr1
+reg_osm_reservation_p_wcr,0.039,OSM share of footprints: reservation p_wcr
+reg_osm_reservation_p_holm,0.429,OSM share of footprints: reservation p_holm
+reg_osm_tribal_statistical_coef,0.0481814438068857,OSM share of footprints: tribal_statistical coef
+reg_osm_tribal_statistical_t_cr1,0.888020690457613,OSM share of footprints: tribal_statistical t_cr1
+reg_osm_tribal_statistical_p_wcr,0.7002,OSM share of footprints: tribal_statistical p_wcr
+reg_osm_tribal_statistical_p_holm,1.0,OSM share of footprints: tribal_statistical p_holm
+reg_osm_svi_overall_coef,-0.1212898124042045,OSM share of footprints: svi_overall coef
+reg_osm_svi_overall_t_cr1,-2.8605511875983463,OSM share of footprints: svi_overall t_cr1
+reg_osm_svi_overall_p_wcr,0.0124,OSM share of footprints: svi_overall p_wcr
+reg_osm_svi_overall_p_holm,0.1736,OSM share of footprints: svi_overall p_holm
+reg_osm_tx_border_coef,-0.4980601282005422,OSM share of footprints: tx_border coef
+reg_osm_tx_border_t_cr1,-10.19706107524698,OSM share of footprints: tx_border t_cr1
+reg_osm_tx_border_p_wcr,0.002,OSM share of footprints: tx_border p_wcr
+reg_osm_tx_border_p_holm,0.036,OSM share of footprints: tx_border p_holm
+reg_osm_az_border_coef,-0.0011701530066944,OSM share of footprints: az_border coef
+reg_osm_az_border_t_cr1,-0.0309780275655907,OSM share of footprints: az_border t_cr1
+reg_osm_az_border_p_wcr,0.9802,OSM share of footprints: az_border p_wcr
+reg_osm_az_border_p_holm,1.0,OSM share of footprints: az_border p_holm
+reg_osm_log10_density_coef,0.1486519920036441,OSM share of footprints: log10_density coef
+reg_osm_log10_density_t_cr1,11.94541038306476,OSM share of footprints: log10_density t_cr1
+reg_osm_log10_density_p_wcr,0.0002,OSM share of footprints: log10_density p_wcr
+reg_osm_log10_density_p_holm,0.0056,OSM share of footprints: log10_density p_holm
+reg_poi_rural_coef,-0.5673174377415541,log places per 1k residents: rural coef
+reg_poi_rural_t_cr1,-7.96819334283142,log places per 1k residents: rural t_cr1
+reg_poi_rural_p_wcr,0.0002,log places per 1k residents: rural p_wcr
+reg_poi_rural_p_holm,0.0056,log places per 1k residents: rural p_holm
+reg_poi_reservation_coef,-0.3404115227784345,log places per 1k residents: reservation coef
+reg_poi_reservation_t_cr1,-3.090301725368249,log places per 1k residents: reservation t_cr1
+reg_poi_reservation_p_wcr,0.0186,log places per 1k residents: reservation p_wcr
+reg_poi_reservation_p_holm,0.2418,log places per 1k residents: reservation p_holm
+reg_poi_tribal_statistical_coef,-0.2074969718507603,log places per 1k residents: tribal_statistical coef
+reg_poi_tribal_statistical_t_cr1,-2.1034357765271303,log places per 1k residents: tribal_statistical t_cr1
+reg_poi_tribal_statistical_p_wcr,0.3258,log places per 1k residents: tribal_statistical p_wcr
+reg_poi_tribal_statistical_p_holm,1.0,log places per 1k residents: tribal_statistical p_holm
+reg_poi_svi_overall_coef,0.4643752275525507,log places per 1k residents: svi_overall coef
+reg_poi_svi_overall_t_cr1,3.7100541671530487,log places per 1k residents: svi_overall t_cr1
+reg_poi_svi_overall_p_wcr,0.0044,log places per 1k residents: svi_overall p_wcr
+reg_poi_svi_overall_p_holm,0.0748,log places per 1k residents: svi_overall p_holm
+reg_poi_tx_border_coef,-0.3670163136720741,log places per 1k residents: tx_border coef
+reg_poi_tx_border_t_cr1,-10.153710436405165,log places per 1k residents: tx_border t_cr1
+reg_poi_tx_border_p_wcr,0.0052,log places per 1k residents: tx_border p_wcr
+reg_poi_tx_border_p_holm,0.0832,log places per 1k residents: tx_border p_holm
+reg_poi_az_border_coef,-0.1402127909699102,log places per 1k residents: az_border coef
+reg_poi_az_border_t_cr1,-2.5040397606738627,log places per 1k residents: az_border t_cr1
+reg_poi_az_border_p_wcr,0.299,log places per 1k residents: az_border p_wcr
+reg_poi_az_border_p_holm,1.0,log places per 1k residents: az_border p_holm
+reg_poi_log10_density_coef,-0.3064546208749608,log places per 1k residents: log10_density coef
+reg_poi_log10_density_t_cr1,-8.0426441455593,log places per 1k residents: log10_density t_cr1
+reg_poi_log10_density_p_wcr,0.0002,log places per 1k residents: log10_density p_wcr
+reg_poi_log10_density_p_holm,0.0056,log places per 1k residents: log10_density p_holm
+reg_addr_rural_coef,-0.001375622662926,share of places with address: rural coef
+reg_addr_rural_t_cr1,-0.3458633435098138,share of places with address: rural t_cr1
+reg_addr_rural_p_wcr,0.7454,share of places with address: rural p_wcr
+reg_addr_rural_p_holm,1.0,share of places with address: rural p_holm
+reg_addr_reservation_coef,-0.0773166621381995,share of places with address: reservation coef
+reg_addr_reservation_t_cr1,-3.7687397734515646,share of places with address: reservation t_cr1
+reg_addr_reservation_p_wcr,0.0014,share of places with address: reservation p_wcr
+reg_addr_reservation_p_holm,0.0266,share of places with address: reservation p_holm
+reg_addr_tribal_statistical_coef,-0.0088178476732924,share of places with address: tribal_statistical coef
+reg_addr_tribal_statistical_t_cr1,-1.6649994814421136,share of places with address: tribal_statistical t_cr1
+reg_addr_tribal_statistical_p_wcr,0.0864,share of places with address: tribal_statistical p_wcr
+reg_addr_tribal_statistical_p_holm,0.7776000000000001,share of places with address: tribal_statistical p_holm
+reg_addr_svi_overall_coef,0.0144095524351435,share of places with address: svi_overall coef
+reg_addr_svi_overall_t_cr1,5.93951061119507,share of places with address: svi_overall t_cr1
+reg_addr_svi_overall_p_wcr,0.0002,share of places with address: svi_overall p_wcr
+reg_addr_svi_overall_p_holm,0.0056,share of places with address: svi_overall p_holm
+reg_addr_tx_border_coef,-0.0163552285673731,share of places with address: tx_border coef
+reg_addr_tx_border_t_cr1,-3.9150314984596566,share of places with address: tx_border t_cr1
+reg_addr_tx_border_p_wcr,0.0552,share of places with address: tx_border p_wcr
+reg_addr_tx_border_p_holm,0.552,share of places with address: tx_border p_holm
+reg_addr_az_border_coef,0.0024443119561118,share of places with address: az_border coef
+reg_addr_az_border_t_cr1,0.4678334391731657,share of places with address: az_border t_cr1
+reg_addr_az_border_p_wcr,0.832,share of places with address: az_border p_wcr
+reg_addr_az_border_p_holm,1.0,share of places with address: az_border p_holm
+reg_addr_log10_density_coef,0.0350324088342412,share of places with address: log10_density coef
+reg_addr_log10_density_t_cr1,11.34872735654789,share of places with address: log10_density t_cr1
+reg_addr_log10_density_p_wcr,0.0002,share of places with address: log10_density p_wcr
+reg_addr_log10_density_p_holm,0.0056,share of places with address: log10_density p_holm
+reg_web_rural_coef,-0.0595281236652844,share of places with website: rural coef
+reg_web_rural_t_cr1,-6.358767000572391,share of places with website: rural t_cr1
+reg_web_rural_p_wcr,0.0002,share of places with website: rural p_wcr
+reg_web_rural_p_holm,0.0056,share of places with website: rural p_holm
+reg_web_reservation_coef,-0.0424740059430485,share of places with website: reservation coef
+reg_web_reservation_t_cr1,-2.5205928375747364,share of places with website: reservation t_cr1
+reg_web_reservation_p_wcr,0.0286,share of places with website: reservation p_wcr
+reg_web_reservation_p_holm,0.3432,share of places with website: reservation p_holm
+reg_web_tribal_statistical_coef,-0.0220707099605004,share of places with website: tribal_statistical coef
+reg_web_tribal_statistical_t_cr1,-2.003188907630489,share of places with website: tribal_statistical t_cr1
+reg_web_tribal_statistical_p_wcr,0.178,share of places with website: tribal_statistical p_wcr
+reg_web_tribal_statistical_p_holm,1.0,share of places with website: tribal_statistical p_holm
+reg_web_svi_overall_coef,-0.0962264331111752,share of places with website: svi_overall coef
+reg_web_svi_overall_t_cr1,-16.31682430020893,share of places with website: svi_overall t_cr1
+reg_web_svi_overall_p_wcr,0.0002,share of places with website: svi_overall p_wcr
+reg_web_svi_overall_p_holm,0.0056,share of places with website: svi_overall p_holm
+reg_web_tx_border_coef,-0.160808209025942,share of places with website: tx_border coef
+reg_web_tx_border_t_cr1,-11.9422999353511,share of places with website: tx_border t_cr1
+reg_web_tx_border_p_wcr,0.0102,share of places with website: tx_border p_wcr
+reg_web_tx_border_p_holm,0.153,share of places with website: tx_border p_holm
+reg_web_az_border_coef,0.0085875539497673,share of places with website: az_border coef
+reg_web_az_border_t_cr1,1.7531653572898165,share of places with website: az_border t_cr1
+reg_web_az_border_p_wcr,0.6232,share of places with website: az_border p_wcr
+reg_web_az_border_p_holm,1.0,share of places with website: az_border p_holm
+reg_web_log10_density_coef,0.0315769393154447,share of places with website: log10_density coef
+reg_web_log10_density_t_cr1,3.93961554582685,share of places with website: log10_density t_cr1
+reg_web_log10_density_p_wcr,0.0008,share of places with website: log10_density p_wcr
+reg_web_log10_density_p_holm,0.0168,share of places with website: log10_density p_holm
+reg_addrpw_rural_coef,-0.0129625953740509,share of places with address (place-weighted): rural coef
+reg_addrpw_rural_t_cr1,-3.047449611635616,share of places with address (place-weighted): rural t_cr1
+reg_addrpw_rural_p_wcr,0.0072,share of places with address (place-weighted): rural p_wcr
+reg_addrpw_reservation_coef,-0.0347595489988579,share of places with address (place-weighted): reservation coef
+reg_addrpw_reservation_t_cr1,-2.0266713726403225,share of places with address (place-weighted): reservation t_cr1
+reg_addrpw_reservation_p_wcr,0.0446,share of places with address (place-weighted): reservation p_wcr
+reg_addrpw_tribal_statistical_coef,-0.0029883500389611,share of places with address (place-weighted): tribal_statistical coef
+reg_addrpw_tribal_statistical_t_cr1,-1.0533146444956238,share of places with address (place-weighted): tribal_statistical t_cr1
+reg_addrpw_tribal_statistical_p_wcr,0.3204,share of places with address (place-weighted): tribal_statistical p_wcr
+reg_addrpw_svi_overall_coef,0.0090992926218588,share of places with address (place-weighted): svi_overall coef
+reg_addrpw_svi_overall_t_cr1,4.178156970289295,share of places with address (place-weighted): svi_overall t_cr1
+reg_addrpw_svi_overall_p_wcr,0.0002,share of places with address (place-weighted): svi_overall p_wcr
+reg_addrpw_tx_border_coef,-0.0157994759927396,share of places with address (place-weighted): tx_border coef
+reg_addrpw_tx_border_t_cr1,-6.672940557410265,share of places with address (place-weighted): tx_border t_cr1
+reg_addrpw_tx_border_p_wcr,0.0452,share of places with address (place-weighted): tx_border p_wcr
+reg_addrpw_az_border_coef,-0.000324220325688,share of places with address (place-weighted): az_border coef
+reg_addrpw_az_border_t_cr1,-0.0771353431308263,share of places with address (place-weighted): az_border t_cr1
+reg_addrpw_az_border_p_wcr,0.9626,share of places with address (place-weighted): az_border p_wcr
+reg_addrpw_log10_density_coef,0.0290127716179561,share of places with address (place-weighted): log10_density coef
+reg_addrpw_log10_density_t_cr1,8.630356516979337,share of places with address (place-weighted): log10_density t_cr1
+reg_addrpw_log10_density_p_wcr,0.0002,share of places with address (place-weighted): log10_density p_wcr
+addr_res_clres_t,-3.1175798287910537,"address ~ reservation, clustered by reservation-or-county: t"
+addr_res_clres_p,0.0026,same: wild-cluster bootstrap p
+addr_res_srcctrl_coef,-0.0696200274592368,address ~ reservation + Meta share + log(n places): coef
+addr_res_srcctrl_t,-3.587371742085538,same: clustered t
+addr_res_srcctrl_p,0.0014,same: WCR p
+addr_meta_res_coef,-0.045243854711463,"Meta places only, place-weighted address ~ reservation: coef"
+addr_meta_res_t,-2.2436632025062435,same: clustered t
+addr_meta_res_p,0.0262,same: WCR p
+res_tracts,80.0,populated tracts flagged as legal reservation / trust land (N1)
+res_nations,34.0,distinct reservation / trust-land areas among them
+res_counties,28.0,counties containing them
+res_pop,294612.0,residents of N1 tracts
+res_addr_tract,0.8211599648423631,N1: tract-mean address share
+nonres_addr_tract,0.956298483201997,rest: tract-mean address share
+res_addr_place,0.8819184827208899,N1: place-weighted address share
+nonres_addr_place,0.9685675749614784,rest: place-weighted address share
+res_places_median,98.0,N1: median places per tract
+res_places_min,2.0,N1: min places per tract
+az_res_tracts,37.0,maricopa-az N1 tracts
+az_res_addr,0.7425211884637993,maricopa-az N1 tract-mean address share
+az_nonres_addr,0.954385851375434,maricopa-az rest
+az_rural_res_addr,0.6615076959489402,"rural maricopa-az, N1"
+az_rural_nonres_addr,0.8285093168708635,"rural maricopa-az, rest"
+az_rural_res_tracts,27.0,rural maricopa-az N1 tracts
+urban_addr_tractmean,0.9686027750468248,urban tracts: tract-mean address share
+missing_addr_meta_share,0.9526003949967085,share of all address-less places that come from Meta
+meta_place_share_all,0.6055009990222335,share of all places that come from Meta
+res_meta_share,0.70602717242637,res: share of places from Meta (pooled)
+res_meta_addr,0.8357225881441301,res: address share of Meta places (pooled)
+res_other_addr,0.9928660049627792,res: address share of non-Meta places (pooled)
+nonres_meta_share,0.6049465724711439,nonres: share of places from Meta (pooled)
+nonres_meta_addr,0.9505357340291904,nonres: address share of Meta places (pooled)
+nonres_other_addr,0.9961797904422202,nonres: address share of non-Meta places (pooled)
+mlonly_tracts,813.0,urban tracts with <5% OSM footprints
+mlonly_pop,3365435.0,their residents
+mlonly_svi,0.6483230012300124,their mean SVI (missing SVI excluded)
+urban_other_svi,0.5590088977047323,other urban tracts mean SVI
+mlonly_minority,0.7329645756457565,mean SVI minority percentile
+urban_other_minority,0.6547237577639751,other urban
+mlonly_sem,0.0081666239591288,mean semantic share
+mlonly_web,0.7283252974772613,mean website share
+urban_other_web,0.8201324688147247,other urban
+mlonly_in_txborder,248.0,ML-only urban tracts inside the South Texas border seam
+mlonly_counties,100.0,counties containing ML-only urban tracts
+mlonly_svi_diff_p,0.0715,"county-cluster bootstrap p, ML-only vs other urban SVI"
+txseam_tracts,451.0,South Texas border seam tracts (populated)
+txseam_pop,1748083.0,their residents
+txseam_counties,9.0,seam counties with populated tracts
+txseam_svi,0.8424750000000001,seam mean SVI
+txrest_svi,0.5601545190562613,rest of TX region mean SVI
+azborder_tracts,325.0,Arizona-contrast tracts
+azborder_pop,1219191.0,their residents
+txseam_osm_pooled,0.0782831736167053,txseam: pooled OSM share
+txseam_gob_pooled,0.2925888343539952,txseam: pooled Google share
+txseam_poi1k_pooled,41.90819314643527,txseam: places per 1k (pooled)
+txrest_osm_pooled,0.5454529232522715,txrest: pooled OSM share
+txrest_gob_pooled,2.303698890693453e-05,txrest: pooled Google share
+txrest_poi1k_pooled,51.08601300281885,txrest: places per 1k (pooled)
+azborder_osm_pooled,0.7608861256370338,azborder: pooled OSM share
+azborder_gob_pooled,0.0618704509467353,azborder: pooled Google share
+azborder_poi1k_pooled,42.553627774483246,azborder: places per 1k (pooled)
+azrest_osm_pooled,0.8061966519048857,azrest: pooled OSM share
+azrest_gob_pooled,0.0,azrest: pooled Google share
+azrest_poi1k_pooled,45.91202685276844,azrest: places per 1k (pooled)
+gob_tracts,289.0,scored tracts with any Google Open Buildings footprint
+gob_footprints,292088.0,Google footprints
+gob_max_share,0.8687618216208352,max tract Google share
+n2_tracts,273.0,N2 tracts (Google > 5%)
+n2_pop,1024852.0,N2 residents
+gob_tracts_in_border_counties,285.0,populated Google tracts in a county on the international border
+gob_tracts_outside_border_counties,2.0,populated Google tracts elsewhere
+gob_share_of_txseam_footprints,0.2925888343539952,Google share of seam footprints
+ex_48323950702_pop_total,5399.0,tract 48323950702: pop_total
+ex_48323950702_sh_gob,0.8687618216208352,tract 48323950702: sh_gob
+ex_48323950702_sh_osm,0.019933071438964,tract 48323950702: sh_osm
+ex_48323950702_poi_per_1k,18.521948508983144,tract 48323950702: poi_per_1k
+ex_48323950702_poi_addr,0.96,tract 48323950702: poi_addr
+ex_04003000902_pop_total,2684.0,tract 04003000902: pop_total
+ex_04003000902_sh_gob,0.8192941176470588,tract 04003000902: sh_gob
+ex_04003000902_sh_osm,0.0447058823529411,tract 04003000902: sh_osm
+ex_04003000902_poi_per_1k,55.886736214605065,tract 04003000902: poi_per_1k
+ex_04003000902_poi_addr,0.9733333333333334,tract 04003000902: poi_addr
+ex_48323950206_pop_total,4909.0,tract 48323950206: pop_total
+ex_48323950206_sh_gob,0.2814982973893303,tract 48323950206: sh_gob
+ex_48323950206_sh_osm,0.0681044267877412,tract 48323950206: sh_osm
+ex_48323950206_poi_per_1k,19.55591770217967,tract 48323950206: poi_per_1k
+ex_48323950206_poi_addr,0.9375,tract 48323950206: poi_addr
+txrest_poi1k_median,37.781864444341736,rest of TX region: median places per 1k
+ms50_tracts,3618.0,scored tracts where >=50% of Overture footprints are Microsoft ML
+ms50_pop,14180298.0,their residents
+ms50_share_tracts,0.3694852941176471,share of tracts with buildings
+ms50_footprint_share,0.3673460934827337,share of all footprints that sit in those tracts and are MS
+ml50_tracts,3751.0,tracts >=50% ML (Microsoft + Google)
+bph_urban_<5%,1.1459823306689103,"urban median buildings per housing unit, OSM share <5%"
+bph_urban_<5%_n,813.0,"urban tracts, OSM share <5%"
+bph_urban_5-50%,1.049716904614141,"urban median buildings per housing unit, OSM share 5-50%"
+bph_urban_5-50%_n,1760.0,"urban tracts, OSM share 5-50%"
+bph_urban_50-95%,0.944452426403048,"urban median buildings per housing unit, OSM share 50-95%"
+bph_urban_50-95%_n,3202.0,"urban tracts, OSM share 50-95%"
+bph_urban_>95%,0.9115618661257606,"urban median buildings per housing unit, OSM share >95%"
+bph_urban_>95%_n,2087.0,"urban tracts, OSM share >95%"
+bph_density_quintiles_osm_lower,5.0,density quintiles where >95%-OSM tracts have fewer buildings/HU than <5%-OSM tracts
+bph_osm_coef,-0.2189960481132629,"log(buildings/HU) ~ OSM share (+rural, SVI, density, region FE): coef"
+bph_osm_t,-4.3129469696971,same: clustered t
+bph_osm_p,0.0012,same: WCR p
+bph_n,9692.0,tracts (HU>=50)
+bph_osm_coef_countyfe,-0.1599850359037208,same with county fixed effects: coef
+bph_osm_t_countyfe,-2.6943772064521507,county FE: t
+bph_osm_p_countyfe,0.0624,county FE: WCR p
+bph_osm_pct_full,-0.196675107203657,implied % change in buildings/HU from 0% to 100% OSM (region FE)
+bph_osm_pct_full_countyfe,-0.1478434593766786,"same, county FE"
+fire_burned_tracts,150.0,"burned tracts (>=30% of land, last fire >=2018)"
+fire_obs_all,0.8466666666666667,share with mean footprint year < last fire
+fire_null_all,0.7816374251934024,null expectation (same-region unburned tracts)
+fire_ca_n,64.0,northern-ca burned tracts
+fire_ca_obs,0.703125,northern-ca observed
+fire_ca_null,0.5643085863377609,northern-ca null
+fire_ca_p,3.876504654746476e-06,"northern-ca: two-sided p (independent-Bernoulli approximation, ignores spatial correlation)"
+fire_2025_share,0.58,share of burned tracts whose last fire was 2025
+ex_06061020200_mean_year,2008.4407304240167,06061020200: mean footprint source year
+ex_06061020200_new_share,0.2154131847725162,06061020200: share 2020+
+ex_06033000501_mean_year,2018.7948350071736,06033000501: mean footprint source year
+ex_06033000501_new_share,0.0129124820659971,06033000501: share 2020+
+paradise_new_share_min,0.90736984448952,Paradise tracts: min share of footprints with 2020+ source date
+paradise_new_share_max,0.9976757699012202,Paradise tracts: max share 2020+
+agree_nonosm_rho,0.7380952380952381,Spearman rho vs scorecard: non-OSM share
+agree_nonosm_p,0.0229166666666666,exact one-sided p: non-OSM share
+agree_nonosm_pbonf,0.1604166666666666,Bonferroni x7: non-OSM share
+agree_noaddr_rho,0.880952380952381,Spearman rho vs scorecard: missing address
+agree_noaddr_p,0.0036210317460317,exact one-sided p: missing address
+agree_noaddr_pbonf,0.0253472222222222,Bonferroni x7: missing address
+agree_nosem_rho,0.4047619047619048,Spearman rho vs scorecard: no semantic attributes
+agree_nosem_p,0.1634176587301587,exact one-sided p: no semantic attributes
+agree_nosem_pbonf,1.0,Bonferroni x7: no semantic attributes
+agree_ms_rho,0.5952380952380953,Spearman rho vs scorecard: Microsoft-ML share
+agree_ms_p,0.0661458333333333,exact one-sided p: Microsoft-ML share
+agree_ms_pbonf,0.4630208333333333,Bonferroni x7: Microsoft-ML share
+agree_lowconf_rho,0.5000000000000001,Spearman rho vs scorecard: low-confidence places
+agree_lowconf_p,0.1080853174603174,exact one-sided p: low-confidence places
+agree_lowconf_pbonf,0.7565972222222223,Bonferroni x7: low-confidence places
+agree_web_rho,0.5714285714285715,Spearman rho vs scorecard: website (inverse)
+agree_web_p,0.0755704365079365,exact one-sided p: website (inverse)
+agree_web_pbonf,0.5289930555555555,Bonferroni x7: website (inverse)
+agree_poi1k_rho,0.6428571428571429,Spearman rho vs scorecard: places per 1k (inverse)
+agree_poi1k_p,0.0480902777777777,exact one-sided p: places per 1k (inverse)
+agree_poi1k_pbonf,0.3366319444444444,Bonferroni x7: places per 1k (inverse)
+v5_ratio_SVI,0.9137693373686512,"v5 predicted ratio, High SVI (>=0.75)"
+v5_ratio_CVI,1.071149608656499,"v5 predicted ratio, High CVI (top 25%)"
+pop_rural,6461884.0,residents of rural tracts
+pop_tribal_any,2933357.0,residents of tracts overlapping tribal land
+pop_total_populated,40427337.0,residents of all populated scored tracts
+ci_addr_res_coef,-0.0773166621381995,share of places with address ~ reservation: coef
+ci_addr_res_lo,-0.1175265643602581,95% CI low (coef - 1.96 se_cr1)
+ci_addr_res_hi,-0.0371067599161408,95% CI high
+ci_addr_svi_coef,0.0144095524351435,share of places with address ~ svi_overall: coef
+ci_addr_svi_lo,0.0096544935385995,95% CI low (coef - 1.96 se_cr1)
+ci_addr_svi_hi,0.0191646113316874,95% CI high
+ci_addr_rural_coef,-0.001375622662926,share of places with address ~ rural: coef
+ci_addr_rural_lo,-0.0091712461943874,95% CI low (coef - 1.96 se_cr1)
+ci_addr_rural_hi,0.0064200008685354,95% CI high
+ci_osm_txb_coef,-0.4980601282005422,OSM share of footprints ~ tx_border: coef
+ci_osm_txb_lo,-0.5937933835051268,95% CI low (coef - 1.96 se_cr1)
+ci_osm_txb_hi,-0.4023268728959576,95% CI high
+ci_osm_azb_coef,-0.0011701530066944,OSM share of footprints ~ az_border: coef
+ci_osm_azb_lo,-0.07520649661395,95% CI low (coef - 1.96 se_cr1)
+ci_osm_azb_hi,0.0728661906005612,95% CI high
+ci_osm_rural_coef,-0.079019555444864,OSM share of footprints ~ rural: coef
+ci_osm_rural_lo,-0.1253232587445844,95% CI low (coef - 1.96 se_cr1)
+ci_osm_rural_hi,-0.0327158521451435,95% CI high
+ci_osm_svi_coef,-0.1212898124042045,OSM share of footprints ~ svi_overall: coef
+ci_osm_svi_lo,-0.2043954856544816,95% CI low (coef - 1.96 se_cr1)
+ci_osm_svi_hi,-0.0381841391539273,95% CI high
+ci_osm_res_coef,0.0923484115227917,OSM share of footprints ~ reservation: coef
+ci_osm_res_lo,0.0170011947774341,95% CI low (coef - 1.96 se_cr1)
+ci_osm_res_hi,0.1676956282681492,95% CI high
+ci_poi_txb_pct,-0.307201657132777,log places per 1k residents ~ tx_border: % effect
+ci_poi_txb_pct_lo,-0.3545854986616576,95% CI low (exp of CR1 CI)
+ci_poi_txb_pct_hi,-0.2563390768501524,95% CI high
+ci_web_txb_coef,-0.160808209025942,share of places with website ~ tx_border: coef
+ci_web_txb_lo,-0.1872004526806043,95% CI low (coef - 1.96 se_cr1)
+ci_web_txb_hi,-0.1344159653712797,95% CI high
+ci_addrpw_res_coef,-0.0347595489988579,share of places with address (place-weighted) ~ reservation: coef
+ci_addrpw_res_lo,-0.0683756137232556,95% CI low (coef - 1.96 se_cr1)
+ci_addrpw_res_hi,-0.0011434842744601,95% CI high
+ci_bph_osm_pct,-0.196675107203657,buildings/HU ~ OSM share (0->100%): % effect
+ci_bph_osm_pct_lo,-0.2727739032195864,95% CI low
+ci_bph_osm_pct_hi,-0.1126131388253601,95% CI high
+rx_zuni_tract_overlap,0.0150090538582629,04001970202: share of tract area that is legal reservation/trust land (tribal_legal_pct)
+rx_core_tracts,50.0,core reservation tracts (>=50% legal overlap)
+rx_core_pop,175088.0,their residents
+rx_core_nations,13.0,distinct reservation areas among them
+rx_partial_tracts,30.0,N1 tracts with <50% legal overlap
+rx_partial_pop,119524.0,their residents
+rx_core_addr,0.7822035641403599,core: tract-mean address share
+rx_rest_addr,0.956298483201997,non-reservation tracts: tract-mean
+rx_partial_addr,0.8860872993457019,partial-overlap N1 tracts: tract-mean address share
+rx_core_drop_coef,-0.1148692917367762,address ~ core (>=50%) vs non-reservation; partial-overlap tracts dropped: coef
+rx_core_drop_lo,-0.1777548735659749,address ~ core (>=50%) vs non-reservation; partial-overlap tracts dropped: lo
+rx_core_drop_hi,-0.0519837099075774,address ~ core (>=50%) vs non-reservation; partial-overlap tracts dropped: hi
+rx_core_drop_t,-3.580213544268165,address ~ core (>=50%) vs non-reservation; partial-overlap tracts dropped: t
+rx_core_drop_p_wcr,0.0004,address ~ core (>=50%) vs non-reservation; partial-overlap tracts dropped: p_wcr
+rx_core_keep_coef,-0.1138701789373021,address ~ core (>=50%) flag; partial-overlap tracts kept as non-reservation: coef
+rx_core_keep_lo,-0.1763612128405943,address ~ core (>=50%) flag; partial-overlap tracts kept as non-reservation: lo
+rx_core_keep_hi,-0.05137914503401,address ~ core (>=50%) flag; partial-overlap tracts kept as non-reservation: hi
+rx_core_keep_t,-3.571481167402392,address ~ core (>=50%) flag; partial-overlap tracts kept as non-reservation: t
+rx_core_keep_p_wcr,0.0002,address ~ core (>=50%) flag; partial-overlap tracts kept as non-reservation: p_wcr
+rx_core_places,5997.0,places in core reservation tracts
+rx_core_missing,816.0,of which without a street address
+rx_core_missing_natural_share,0.446078431372549,share of address-less core places that are natural features/parks/landmarks
+rx_core_missing_relief,189.0,address-less core places in the six relief-relevant groups
+rx_core_relief_places,1582.0,core places in the six relief-relevant groups
+rx_core_relief_rate,0.8805309734513275,"address rate, relief-relevant places, core reservation"
+rx_rest_relief_rate,0.9677539685829154,"address rate, relief-relevant places, non-reservation"
+rx_grp_natural_n_core,486.0,"Natural features, parks, landmarks: places, core"
+rx_grp_natural_miss_core,364.0,"Natural features, parks, landmarks: address-less, core"
+rx_grp_natural_rate_core,0.2510288065843621,"Natural features, parks, landmarks: address rate core"
+rx_grp_natural_rate_rest,0.6799270405836754,"Natural features, parks, landmarks: address rate non-reservation"
+rx_grp_other_n_core,3929.0,"Other businesses and services: places, core"
+rx_grp_other_miss_core,263.0,"Other businesses and services: address-less, core"
+rx_grp_other_rate_core,0.933061847798422,Other businesses and services: address rate core
+rx_grp_other_rate_rest,0.9784933691849196,Other businesses and services: address rate non-reservation
+rx_grp_government_n_core,422.0,"Government and community (incl. chapter houses): places, core"
+rx_grp_government_miss_core,66.0,"Government and community (incl. chapter houses): address-less, core"
+rx_grp_government_rate_core,0.8436018957345972,Government and community (incl. chapter houses): address rate core
+rx_grp_government_rate_rest,0.9433162865355184,Government and community (incl. chapter houses): address rate non-reservation
+rx_grp_churches_n_core,324.0,"Churches and worship: places, core"
+rx_grp_churches_miss_core,55.0,"Churches and worship: address-less, core"
+rx_grp_churches_rate_core,0.8302469135802469,Churches and worship: address rate core
+rx_grp_churches_rate_rest,0.9575111599922366,Churches and worship: address rate non-reservation
+rx_grp_schools_n_core,251.0,"Schools: places, core"
+rx_grp_schools_miss_core,33.0,"Schools: address-less, core"
+rx_grp_schools_rate_core,0.8685258964143426,Schools: address rate core
+rx_grp_schools_rate_rest,0.9408917803871788,Schools: address rate non-reservation
+rx_grp_food_n_core,349.0,"Food, fuel and supplies: places, core"
+rx_grp_food_miss_core,19.0,"Food, fuel and supplies: address-less, core"
+rx_grp_food_rate_core,0.9455587392550144,"Food, fuel and supplies: address rate core"
+rx_grp_food_rate_rest,0.9847605224963716,"Food, fuel and supplies: address rate non-reservation"
+rx_grp_health_n_core,165.0,"Health (hospitals, clinics, pharmacies): places, core"
+rx_grp_health_miss_core,13.0,"Health (hospitals, clinics, pharmacies): address-less, core"
+rx_grp_health_rate_core,0.9212121212121211,"Health (hospitals, clinics, pharmacies): address rate core"
+rx_grp_health_rate_rest,0.9881454816285998,"Health (hospitals, clinics, pharmacies): address rate non-reservation"
+rx_grp_fire_n_core,71.0,"Fire, police, EMS: places, core"
+rx_grp_fire_miss_core,3.0,"Fire, police, EMS: address-less, core"
+rx_grp_fire_rate_core,0.9577464788732394,"Fire, police, EMS: address rate core"
+rx_grp_fire_rate_rest,0.9795545819642204,"Fire, police, EMS: address rate non-reservation"
+rx_built_coef,-0.0934525899834326,"addr_built ~ core reservation (+controls, partial dropped): coef"
+rx_built_lo,-0.1494495770473327,95% CI low
+rx_built_hi,-0.0374556029195325,95% CI high
+rx_built_p,0.0006,WCR p
+rx_built_n,9676.0,tracts
+rx_built_core_mean,0.8515673885621515,addr_built: core tract mean
+rx_built_rest_mean,0.9682112913918598,addr_built: non-reservation tract mean
+rx_relief_coef,-0.0760228273835603,"addr_relief ~ core reservation (+controls, partial dropped): coef"
+rx_relief_lo,-0.1219460621071932,95% CI low
+rx_relief_hi,-0.0300995926599275,95% CI high
+rx_relief_p,0.0006,WCR p
+rx_relief_n,9627.0,tracts
+rx_relief_core_mean,0.8625502249655174,addr_relief: core tract mean
+rx_relief_rest_mean,0.964018190662586,addr_relief: non-reservation tract mean
+rx_ex_04019941100_relief_missing,5.0,04019941100: address-less relief-relevant places
+rx_ex_04019941100_addr_built,0.59375,04019941100: address share excluding natural features
+rx_ex_04009940500_relief_missing,10.0,04009940500: address-less relief-relevant places
+rx_ex_04009940500_addr_built,0.603448275862069,04009940500: address share excluding natural features
+rx_ex_04017940100_relief_missing,7.0,04017940100: address-less relief-relevant places
+rx_ex_04017940100_addr_built,0.7692307692307693,04017940100: address share excluding natural features
+rx_ex_04005945100_relief_missing,8.0,04005945100: address-less relief-relevant places
+rx_ex_04005945100_addr_built,0.6470588235294118,04005945100: address share excluding natural features
+hz_thr_wildfire,71.41167460773028,top-quartile threshold for usfs_WHP_mean (populated tracts)
+hz_thr_drought,164.21067008934983,top-quartile threshold for usdm_winter_dsci (populated tracts)
+hz_thr_heat_rel,15.666666666666666,top-quartile threshold for epht_heat_days_summer (populated tracts)
+hz_thr_heat_abs,72.71727779440145,top-quartile threshold for gehe_wbgt28_days_mean (populated tracts)
+hz_core_res_wildfire_tracts,29,"Reservation / trust land (core, >=50% overlap), top-quartile wildfire: tracts"
+hz_core_res_wildfire_residents,97121,"Reservation / trust land (core, >=50% overlap), top-quartile wildfire: residents"
+hz_core_res_wildfire_places_no_address,563,"Reservation / trust land (core, >=50% overlap), top-quartile wildfire: places_no_address"
+hz_core_res_wildfire_addr_share_tractmean,0.7880919657749039,"Reservation / trust land (core, >=50% overlap), top-quartile wildfire: addr_share_tractmean"
+hz_core_res_wildfire_ml_footprint_share,0.613582603305111,"Reservation / trust land (core, >=50% overlap), top-quartile wildfire: ml_footprint_share"
+hz_core_res_wildfire_footprints_ml,37612,"Reservation / trust land (core, >=50% overlap), top-quartile wildfire: footprints_ml"
+hz_core_res_drought_tracts,27,"Reservation / trust land (core, >=50% overlap), top-quartile drought: tracts"
+hz_core_res_drought_residents,100773,"Reservation / trust land (core, >=50% overlap), top-quartile drought: residents"
+hz_core_res_drought_places_no_address,502,"Reservation / trust land (core, >=50% overlap), top-quartile drought: places_no_address"
+hz_core_res_drought_addr_share_tractmean,0.7617559122021444,"Reservation / trust land (core, >=50% overlap), top-quartile drought: addr_share_tractmean"
+hz_core_res_drought_ml_footprint_share,0.4292018419033001,"Reservation / trust land (core, >=50% overlap), top-quartile drought: ml_footprint_share"
+hz_core_res_drought_footprints_ml,20133,"Reservation / trust land (core, >=50% overlap), top-quartile drought: footprints_ml"
+hz_core_res_heat_rel_tracts,2,"Reservation / trust land (core, >=50% overlap), top-quartile heat_rel: tracts"
+hz_core_res_heat_rel_residents,10251,"Reservation / trust land (core, >=50% overlap), top-quartile heat_rel: residents"
+hz_core_res_heat_rel_places_no_address,93,"Reservation / trust land (core, >=50% overlap), top-quartile heat_rel: places_no_address"
+hz_core_res_heat_rel_addr_share_tractmean,0.5341003316749585,"Reservation / trust land (core, >=50% overlap), top-quartile heat_rel: addr_share_tractmean"
+hz_core_res_heat_rel_ml_footprint_share,0.8079710144927537,"Reservation / trust land (core, >=50% overlap), top-quartile heat_rel: ml_footprint_share"
+hz_core_res_heat_rel_footprints_ml,2899,"Reservation / trust land (core, >=50% overlap), top-quartile heat_rel: footprints_ml"
+hz_core_res_heat_abs_tracts,6,"Reservation / trust land (core, >=50% overlap), top-quartile heat_abs: tracts"
+hz_core_res_heat_abs_residents,21567,"Reservation / trust land (core, >=50% overlap), top-quartile heat_abs: residents"
+hz_core_res_heat_abs_places_no_address,138,"Reservation / trust land (core, >=50% overlap), top-quartile heat_abs: places_no_address"
+hz_core_res_heat_abs_addr_share_tractmean,0.813059966991717,"Reservation / trust land (core, >=50% overlap), top-quartile heat_abs: addr_share_tractmean"
+hz_core_res_heat_abs_ml_footprint_share,0.3068545803971813,"Reservation / trust land (core, >=50% overlap), top-quartile heat_abs: ml_footprint_share"
+hz_core_res_heat_abs_footprints_ml,2874,"Reservation / trust land (core, >=50% overlap), top-quartile heat_abs: footprints_ml"
+hz_core_res_any_tracts,42,"Reservation / trust land (core, >=50% overlap), top-quartile any: tracts"
+hz_core_res_any_residents,146287,"Reservation / trust land (core, >=50% overlap), top-quartile any: residents"
+hz_core_res_any_places_no_address,763,"Reservation / trust land (core, >=50% overlap), top-quartile any: places_no_address"
+hz_core_res_any_addr_share_tractmean,0.7838950161809631,"Reservation / trust land (core, >=50% overlap), top-quartile any: addr_share_tractmean"
+hz_core_res_any_ml_footprint_share,0.575527521638287,"Reservation / trust land (core, >=50% overlap), top-quartile any: ml_footprint_share"
+hz_core_res_any_footprints_ml,50868,"Reservation / trust land (core, >=50% overlap), top-quartile any: footprints_ml"
+hz_core_res_tracts,50,"Reservation / trust land (core, >=50% overlap): tracts"
+hz_core_res_pop,175088,"Reservation / trust land (core, >=50% overlap): residents"
+hz_tx_border_wildfire_tracts,34,"South Texas border seam, top-quartile wildfire: tracts"
+hz_tx_border_wildfire_residents,150232,"South Texas border seam, top-quartile wildfire: residents"
+hz_tx_border_wildfire_places_no_address,277,"South Texas border seam, top-quartile wildfire: places_no_address"
+hz_tx_border_wildfire_addr_share_tractmean,0.919727940678387,"South Texas border seam, top-quartile wildfire: addr_share_tractmean"
+hz_tx_border_wildfire_ml_footprint_share,0.9463997752785609,"South Texas border seam, top-quartile wildfire: ml_footprint_share"
+hz_tx_border_wildfire_footprints_ml,90967,"South Texas border seam, top-quartile wildfire: footprints_ml"
+hz_tx_border_drought_tracts,0,"South Texas border seam, top-quartile drought: tracts"
+hz_tx_border_drought_residents,0,"South Texas border seam, top-quartile drought: residents"
+hz_tx_border_drought_places_no_address,0,"South Texas border seam, top-quartile drought: places_no_address"
+hz_tx_border_drought_addr_share_tractmean,,"South Texas border seam, top-quartile drought: addr_share_tractmean"
+hz_tx_border_drought_ml_footprint_share,0.0,"South Texas border seam, top-quartile drought: ml_footprint_share"
+hz_tx_border_drought_footprints_ml,0,"South Texas border seam, top-quartile drought: footprints_ml"
+hz_tx_border_heat_rel_tracts,117,"South Texas border seam, top-quartile heat_rel: tracts"
+hz_tx_border_heat_rel_residents,417696,"South Texas border seam, top-quartile heat_rel: residents"
+hz_tx_border_heat_rel_places_no_address,718,"South Texas border seam, top-quartile heat_rel: places_no_address"
+hz_tx_border_heat_rel_addr_share_tractmean,0.952113754394106,"South Texas border seam, top-quartile heat_rel: addr_share_tractmean"
+hz_tx_border_heat_rel_ml_footprint_share,0.8758080963786847,"South Texas border seam, top-quartile heat_rel: ml_footprint_share"
+hz_tx_border_heat_rel_footprints_ml,184651,"South Texas border seam, top-quartile heat_rel: footprints_ml"
+hz_tx_border_heat_abs_tracts,448,"South Texas border seam, top-quartile heat_abs: tracts"
+hz_tx_border_heat_abs_residents,1742261,"South Texas border seam, top-quartile heat_abs: residents"
+hz_tx_border_heat_abs_places_no_address,2717,"South Texas border seam, top-quartile heat_abs: places_no_address"
+hz_tx_border_heat_abs_addr_share_tractmean,0.951870393480173,"South Texas border seam, top-quartile heat_abs: addr_share_tractmean"
+hz_tx_border_heat_abs_ml_footprint_share,0.9231786474529785,"South Texas border seam, top-quartile heat_abs: ml_footprint_share"
+hz_tx_border_heat_abs_footprints_ml,792343,"South Texas border seam, top-quartile heat_abs: footprints_ml"
+hz_tx_border_any_tracts,450,"South Texas border seam, top-quartile any: tracts"
+hz_tx_border_any_residents,1747323,"South Texas border seam, top-quartile any: residents"
+hz_tx_border_any_places_no_address,2792,"South Texas border seam, top-quartile any: places_no_address"
+hz_tx_border_any_addr_share_tractmean,0.9513640749222554,"South Texas border seam, top-quartile any: addr_share_tractmean"
+hz_tx_border_any_ml_footprint_share,0.9223939118378242,"South Texas border seam, top-quartile any: ml_footprint_share"
+hz_tx_border_any_footprints_ml,800316,"South Texas border seam, top-quartile any: footprints_ml"
+hz_tx_border_tracts,451,South Texas border seam: tracts
+hz_tx_border_pop,1748083,South Texas border seam: residents
+hz_mlonly_urban_wildfire_tracts,99,"ML-only urban tracts (<5% OSM), top-quartile wildfire: tracts"
+hz_mlonly_urban_wildfire_residents,454017,"ML-only urban tracts (<5% OSM), top-quartile wildfire: residents"
+hz_mlonly_urban_wildfire_places_no_address,522,"ML-only urban tracts (<5% OSM), top-quartile wildfire: places_no_address"
+hz_mlonly_urban_wildfire_addr_share_tractmean,0.9539237574228937,"ML-only urban tracts (<5% OSM), top-quartile wildfire: addr_share_tractmean"
+hz_mlonly_urban_wildfire_ml_footprint_share,0.9400998612576537,"ML-only urban tracts (<5% OSM), top-quartile wildfire: ml_footprint_share"
+hz_mlonly_urban_wildfire_footprints_ml,226314,"ML-only urban tracts (<5% OSM), top-quartile wildfire: footprints_ml"
+hz_mlonly_urban_drought_tracts,73,"ML-only urban tracts (<5% OSM), top-quartile drought: tracts"
+hz_mlonly_urban_drought_residents,313088,"ML-only urban tracts (<5% OSM), top-quartile drought: residents"
+hz_mlonly_urban_drought_places_no_address,244,"ML-only urban tracts (<5% OSM), top-quartile drought: places_no_address"
+hz_mlonly_urban_drought_addr_share_tractmean,0.9604289729088663,"ML-only urban tracts (<5% OSM), top-quartile drought: addr_share_tractmean"
+hz_mlonly_urban_drought_ml_footprint_share,0.9666159022489818,"ML-only urban tracts (<5% OSM), top-quartile drought: ml_footprint_share"
+hz_mlonly_urban_drought_footprints_ml,136462,"ML-only urban tracts (<5% OSM), top-quartile drought: footprints_ml"
+hz_mlonly_urban_heat_rel_tracts,325,"ML-only urban tracts (<5% OSM), top-quartile heat_rel: tracts"
+hz_mlonly_urban_heat_rel_residents,1461413,"ML-only urban tracts (<5% OSM), top-quartile heat_rel: residents"
+hz_mlonly_urban_heat_rel_places_no_address,1250,"ML-only urban tracts (<5% OSM), top-quartile heat_rel: places_no_address"
+hz_mlonly_urban_heat_rel_addr_share_tractmean,0.9633197431841822,"ML-only urban tracts (<5% OSM), top-quartile heat_rel: addr_share_tractmean"
+hz_mlonly_urban_heat_rel_ml_footprint_share,0.9768083903229058,"ML-only urban tracts (<5% OSM), top-quartile heat_rel: ml_footprint_share"
+hz_mlonly_urban_heat_rel_footprints_ml,571766,"ML-only urban tracts (<5% OSM), top-quartile heat_rel: footprints_ml"
+hz_mlonly_urban_heat_abs_tracts,360,"ML-only urban tracts (<5% OSM), top-quartile heat_abs: tracts"
+hz_mlonly_urban_heat_abs_residents,1527438,"ML-only urban tracts (<5% OSM), top-quartile heat_abs: residents"
+hz_mlonly_urban_heat_abs_places_no_address,1672,"ML-only urban tracts (<5% OSM), top-quartile heat_abs: places_no_address"
+hz_mlonly_urban_heat_abs_addr_share_tractmean,0.9564443555195603,"ML-only urban tracts (<5% OSM), top-quartile heat_abs: addr_share_tractmean"
+hz_mlonly_urban_heat_abs_ml_footprint_share,0.9818431557711294,"ML-only urban tracts (<5% OSM), top-quartile heat_abs: ml_footprint_share"
+hz_mlonly_urban_heat_abs_footprints_ml,686220,"ML-only urban tracts (<5% OSM), top-quartile heat_abs: footprints_ml"
+hz_mlonly_urban_any_tracts,626,"ML-only urban tracts (<5% OSM), top-quartile any: tracts"
+hz_mlonly_urban_any_residents,2750684,"ML-only urban tracts (<5% OSM), top-quartile any: residents"
+hz_mlonly_urban_any_places_no_address,2747,"ML-only urban tracts (<5% OSM), top-quartile any: places_no_address"
+hz_mlonly_urban_any_addr_share_tractmean,0.959649250238794,"ML-only urban tracts (<5% OSM), top-quartile any: addr_share_tractmean"
+hz_mlonly_urban_any_ml_footprint_share,0.971667730746468,"ML-only urban tracts (<5% OSM), top-quartile any: ml_footprint_share"
+hz_mlonly_urban_any_footprints_ml,1167314,"ML-only urban tracts (<5% OSM), top-quartile any: footprints_ml"
+hz_mlonly_urban_tracts,813,ML-only urban tracts (<5% OSM): tracts
+hz_mlonly_urban_pop,3365435,ML-only urban tracts (<5% OSM): residents
+hz_core_res_wildfire_share,0.58,core_res: share of tracts top-quartile wildfire
+hz_core_res_drought_share,0.54,core_res: share of tracts top-quartile drought
+hz_core_res_heat_rel_share,0.04,core_res: share of tracts top-quartile heat_rel
+hz_core_res_heat_abs_share,0.12,core_res: share of tracts top-quartile heat_abs
+hz_core_res_any_share,0.84,core_res: share of tracts top-quartile any
+hz_tx_border_wildfire_share,0.07538802660753881,tx_border: share of tracts top-quartile wildfire
+hz_tx_border_drought_share,0.0,tx_border: share of tracts top-quartile drought
+hz_tx_border_heat_rel_share,0.25942350332594233,tx_border: share of tracts top-quartile heat_rel
+hz_tx_border_heat_abs_share,0.9933481152993349,tx_border: share of tracts top-quartile heat_abs
+hz_tx_border_any_share,0.9977827050997783,tx_border: share of tracts top-quartile any
+hz_mlonly_urban_wildfire_share,0.12177121771217712,mlonly_urban: share of tracts top-quartile wildfire
+hz_mlonly_urban_drought_share,0.0897908979089791,mlonly_urban: share of tracts top-quartile drought
+hz_mlonly_urban_heat_rel_share,0.3997539975399754,mlonly_urban: share of tracts top-quartile heat_rel
+hz_mlonly_urban_heat_abs_share,0.44280442804428044,mlonly_urban: share of tracts top-quartile heat_abs
+hz_mlonly_urban_any_share,0.7699876998769988,mlonly_urban: share of tracts top-quartile any
+hz_all_wildfire_share,0.25002559639602745,all populated tracts: share top-quartile wildfire
+hz_all_drought_share,0.25002559639602745,all populated tracts: share top-quartile drought
+hz_all_heat_rel_share,0.26517866284427155,all populated tracts: share top-quartile heat_rel
+hz_all_heat_abs_share,0.25002559639602745,all populated tracts: share top-quartile heat_abs
+hz_all_any_share,0.6493293744240811,all populated tracts: share top-quartile any
+hz_ex_04019941100_wildfire,21.390361488241417,04019941100: usfs_WHP_mean
+hz_ex_04019941100_wildfire_hi,False,04019941100: top quartile wildfire?
+hz_ex_04019941100_drought,145.7386353478773,04019941100: usdm_winter_dsci
+hz_ex_04019941100_drought_hi,False,04019941100: top quartile drought?
+hz_ex_04019941100_heat_rel,14.0,04019941100: epht_heat_days_summer
+hz_ex_04019941100_heat_rel_hi,False,04019941100: top quartile heat_rel?
+hz_ex_04019941100_heat_abs,38.827314150418594,04019941100: gehe_wbgt28_days_mean
+hz_ex_04019941100_heat_abs_hi,False,04019941100: top quartile heat_abs?
+hz_ex_04019941100_pctile_heat_abs,0.2884201904371864,04019941100: percentile of WBGT>=28 days
+hz_ex_04019941100_pctile_wildfire,0.46124705641445685,04019941100: percentile of WHP
+hz_ex_04017940100_wildfire,2940.008655155058,04017940100: usfs_WHP_mean
+hz_ex_04017940100_wildfire_hi,True,04017940100: top quartile wildfire?
+hz_ex_04017940100_drought,192.73658394070318,04017940100: usdm_winter_dsci
+hz_ex_04017940100_drought_hi,True,04017940100: top quartile drought?
+hz_ex_04017940100_heat_rel,13.555555555555555,04017940100: epht_heat_days_summer
+hz_ex_04017940100_heat_rel_hi,False,04017940100: top quartile heat_rel?
+hz_ex_04017940100_heat_abs,0.0,04017940100: gehe_wbgt28_days_mean
+hz_ex_04017940100_heat_abs_hi,False,04017940100: top quartile heat_abs?
+hz_ex_04017940100_pctile_heat_abs,0.01423159619125627,04017940100: percentile of WBGT>=28 days
+hz_ex_04017940100_pctile_wildfire,0.9934473226169755,04017940100: percentile of WHP
+hz_ex_04009940500_wildfire,1341.3130131880628,04009940500: usfs_WHP_mean
+hz_ex_04009940500_wildfire_hi,True,04009940500: top quartile wildfire?
+hz_ex_04009940500_drought,194.59281915651246,04009940500: usdm_winter_dsci
+hz_ex_04009940500_drought_hi,True,04009940500: top quartile drought?
+hz_ex_04009940500_heat_rel,15.777777777777779,04009940500: epht_heat_days_summer
+hz_ex_04009940500_heat_rel_hi,True,04009940500: top quartile heat_rel?
+hz_ex_04009940500_heat_abs,4.796025590503172,04009940500: gehe_wbgt28_days_mean
+hz_ex_04009940500_heat_abs_hi,False,04009940500: top quartile heat_abs?
+hz_ex_04009940500_pctile_heat_abs,0.0890754581754889,04009940500: percentile of WBGT>=28 days
+hz_ex_04009940500_pctile_wildfire,0.9834135353742193,04009940500: percentile of WHP
+hz_ex_04017940014_wildfire,7.789715917014131,04017940014: usfs_WHP_mean
+hz_ex_04017940014_wildfire_hi,False,04017940014: top quartile wildfire?
+hz_ex_04017940014_drought,236.82443210920462,04017940014: usdm_winter_dsci
+hz_ex_04017940014_drought_hi,True,04017940014: top quartile drought?
+hz_ex_04017940014_heat_rel,13.555555555555555,04017940014: epht_heat_days_summer
+hz_ex_04017940014_heat_rel_hi,False,04017940014: top quartile heat_rel?
+hz_ex_04017940014_heat_abs,0.0,04017940014: gehe_wbgt28_days_mean
+hz_ex_04017940014_heat_abs_hi,False,04017940014: top quartile heat_abs?
+hz_ex_04017940014_pctile_heat_abs,0.01423159619125627,04017940014: percentile of WBGT>=28 days
+hz_ex_04017940014_pctile_wildfire,0.2762363059281253,04017940014: percentile of WHP
+hz_ex_04005945100_wildfire,14.533915003139946,04005945100: usfs_WHP_mean
+hz_ex_04005945100_wildfire_hi,False,04005945100: top quartile wildfire?
+hz_ex_04005945100_drought,210.85398251151005,04005945100: usdm_winter_dsci
+hz_ex_04005945100_drought_hi,True,04005945100: top quartile drought?
+hz_ex_04005945100_heat_rel,12.444444444444445,04005945100: epht_heat_days_summer
+hz_ex_04005945100_heat_rel_hi,False,04005945100: top quartile heat_rel?
+hz_ex_04005945100_heat_abs,0.025151959618136085,04005945100: gehe_wbgt28_days_mean
+hz_ex_04005945100_heat_abs_hi,False,04005945100: top quartile heat_abs?
+hz_ex_04005945100_pctile_heat_abs,0.023036756424695402,04005945100: percentile of WBGT>=28 days
+hz_ex_04005945100_pctile_wildfire,0.38026005938363877,04005945100: percentile of WHP
+hz_ex_53077940003_wildfire,2999.1823697376326,53077940003: usfs_WHP_mean
+hz_ex_53077940003_wildfire_hi,True,53077940003: top quartile wildfire?
+hz_ex_53077940003_drought,129.93655160467836,53077940003: usdm_winter_dsci
+hz_ex_53077940003_drought_hi,False,53077940003: top quartile drought?
+hz_ex_53077940003_heat_rel,12.222222222222221,53077940003: epht_heat_days_summer
+hz_ex_53077940003_heat_rel_hi,False,53077940003: top quartile heat_rel?
+hz_ex_53077940003_heat_abs,0.03247293854785943,53077940003: gehe_wbgt28_days_mean
+hz_ex_53077940003_heat_abs_hi,False,53077940003: top quartile heat_abs?
+hz_ex_53077940003_pctile_heat_abs,0.025903552779768607,53077940003: percentile of WBGT>=28 days
+hz_ex_53077940003_pctile_wildfire,0.993652093785195,53077940003: percentile of WHP
+hz_ex_53019940000_wildfire,2630.515060040943,53019940000: usfs_WHP_mean
+hz_ex_53019940000_wildfire_hi,True,53019940000: top quartile wildfire?
+hz_ex_53019940000_drought,104.28769332893508,53019940000: usdm_winter_dsci
+hz_ex_53019940000_drought_hi,False,53019940000: top quartile drought?
+hz_ex_53019940000_heat_rel,10.333333333333334,53019940000: epht_heat_days_summer
+hz_ex_53019940000_heat_rel_hi,False,53019940000: top quartile heat_rel?
+hz_ex_53019940000_heat_abs,0.09200415102914077,53019940000: gehe_wbgt28_days_mean
+hz_ex_53019940000_heat_abs_hi,False,53019940000: top quartile heat_abs?
+hz_ex_53019940000_pctile_heat_abs,0.041056619228012695,53019940000: percentile of WBGT>=28 days
+hz_ex_53019940000_pctile_wildfire,0.992423466775878,53019940000: percentile of WHP
+hz_ex_48215021906_wildfire,57.350891762208605,48215021906: usfs_WHP_mean
+hz_ex_48215021906_wildfire_hi,False,48215021906: top quartile wildfire?
+hz_ex_48215021906_drought,72.14072749827781,48215021906: usdm_winter_dsci
+hz_ex_48215021906_drought_hi,False,48215021906: top quartile drought?
+hz_ex_48215021906_heat_rel,14.444444444444445,48215021906: epht_heat_days_summer
+hz_ex_48215021906_heat_rel_hi,False,48215021906: top quartile heat_rel?
+hz_ex_48215021906_heat_abs,133.45783172010022,48215021906: gehe_wbgt28_days_mean
+hz_ex_48215021906_heat_abs_hi,True,48215021906: top quartile heat_abs?
+hz_ex_48215021906_pctile_heat_abs,0.9891471280843657,48215021906: percentile of WBGT>=28 days
+hz_ex_48215021906_pctile_wildfire,0.6988839971332036,48215021906: percentile of WHP
+hz_ex_48323950702_wildfire,11.26496474346947,48323950702: usfs_WHP_mean
+hz_ex_48323950702_wildfire_hi,False,48323950702: top quartile wildfire?
+hz_ex_48323950702_drought,138.60462180953797,48323950702: usdm_winter_dsci
+hz_ex_48323950702_drought_hi,False,48323950702: top quartile drought?
+hz_ex_48323950702_heat_rel,15.666666666666666,48323950702: epht_heat_days_summer
+hz_ex_48323950702_heat_rel_hi,True,48323950702: top quartile heat_rel?
+hz_ex_48323950702_heat_abs,97.29961747316543,48323950702: gehe_wbgt28_days_mean
+hz_ex_48323950702_heat_abs_hi,True,48323950702: top quartile heat_abs?
+hz_ex_48323950702_pctile_heat_abs,0.94092351796867,48323950702: percentile of WBGT>=28 days
+hz_ex_48323950702_pctile_wildfire,0.3322412204361626,48323950702: percentile of WHP

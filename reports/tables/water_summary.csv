@@ -1,0 +1,5 @@
+threshold,tracts,residents,zero_population,no_overture_buildings,no_overture_places,no_major_road,mean_v5
+>0.25,171,627459,2,2,2,14,0.05606
+>0.5,43,136310,2,2,2,8,0.04751
+>0.9,3,3005,2,2,2,2,0.04485
+>0.999,2,0,2,2,2,2,0.04899

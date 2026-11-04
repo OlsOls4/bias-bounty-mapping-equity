@@ -1,0 +1,10 @@
+layer,tracts_with_none,of_which_populated
+buildings,2,0
+places (any),2,0
+roads (any class),2,0
+major roads (motorway-secondary),137,130
+fire_department places,6912,6891
+EMS places,9078,9055
+school places,2100,2081
+"no fire, EMS or school place",1612,1597
+all three layers empty,2,0

@@ -15,7 +15,14 @@ python reports/build_master.py               # one tract table; drops USFS/Carbo
 python reports/v5_method.py                   # submitted v5 scores (must precede analysis.py) -> reports/cache/v5_reproduced.csv
 python reports/analysis.py                    # all tables + reports/tables/report_numbers.csv (every cited number)
 python reports/weightings.py                  # alternative weightings (Documentation report)
+python reports/component_table.py             # per-component Overture proxies + no-Overture counts (Documentation section 4)
+python reports/water_tracts.py                # water-dominated tracts from ALAND vs polygon area (Documentation section 6)
+python reports/v5_sensitivity.py              # v5 coefficient sensitivity via leaderboard-probe maths (Documentation section 7)
 python reports/area_floor.py northern-ca      # 10 m2 ML-footprint floor evidence
+python reports/poi_category_address.py eastern-ok; python reports/poi_category_address.py eastern-wa; python reports/poi_category_address.py maricopa-az; python reports/poi_category_address.py northern-ca; python reports/poi_category_address.py south-central-tx  # place categories x address
+python reports/reservation_extras.py          # CIs, core-overlap robustness, place categories (Bias Discovery F1)
+python reports/hazard_overlay.py              # climate-hazard overlay + named tracts
+python reports/flagged_tracts.py              # lower-confidence tract list for R5 -> reports/tables/flagged_tracts.csv
 python reports/figures.py                     # Figures 1-5
 python reports/maps.py                        # Figure 0 (inset maps)
 echo "done: see reports/tables/ and reports/fig/"
